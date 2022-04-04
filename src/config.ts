@@ -56,7 +56,7 @@ export const NAV_STYLE = {
         title: 'Single column'
     },
     split: {
-        path: './split',
+        path: '/split',
         title: 'Split screen'
     },
     asymmetrical: {
