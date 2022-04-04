@@ -1,0 +1,21 @@
+---
+import RossToppingLayout from '../layouts/RossToppingLayout.astro'
+import Header from '../components/rosstopping/marketingHeader.astro'
+import Section1 from '../components/rosstopping/marketingSection1.astro'
+import Section2 from '../components/rosstopping/marketingSection2.astro'
+import Footer from '../components/rosstopping/marketingFooter.astro'
+const title = 'Marketing template'
+const description = 'Assimetrical layout text/photo with hamburger menu'
+---
+
+<RossToppingLayout content={{title}}>
+    <Header />
+        <main>
+
+        <Section1 />
+        <Section2 />
+        </main>
+        
+
+    <Footer />
+</RossToppingLayout>

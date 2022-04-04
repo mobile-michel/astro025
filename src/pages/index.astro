@@ -1,13 +1,9 @@
 ---
-
+import ArticleComponent from '../components/articleComponent.astro'
+const title = "Tirop's Angels"
 ---
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="bg-red-100">Astro</h1>
-	</body>
-</html>
+
+<ArticleComponent content={title}>
+    <h2>Ross Toping templates</h2>
+    <p><a href="https://templates.digizu.co.uk/">Preview on-line</a></p>
+</ArticleComponent>

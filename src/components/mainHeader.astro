@@ -1,0 +1,22 @@
+---
+import {SITE} from '../config.ts'
+---
+        <header>
+            <div id="logo"><a href="/"><img src="../../logo.svg" alt="logo"></a></div>
+            <div id="siteName"><a href="/"><h1>{SITE.title}</h1></a></div>
+		</header>
+
+<style>
+    header {
+        @apply flex items-center justify-center
+    }
+    img {
+        @apply h-12
+    }
+    #logo {
+        @apply grow
+    }
+    #siteName {
+    	@apply font-bold text-2xl px-6
+    }
+</style>

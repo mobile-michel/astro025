@@ -1,0 +1,10 @@
+---
+import PageLayout from '../layouts/PageLayout.astro'
+const { content } = Astro.props
+---
+<PageLayout content={content}>
+    <section class="">
+            <h2>{content.title}</h2>
+        <slot />
+    </section>
+</PageLayout>

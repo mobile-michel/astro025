@@ -1,0 +1,81 @@
+#wrapper {
+    border: 1px solid red;
+}
+
+header {
+    border: 1px dashed red;
+}
+
+nav {
+    border: 1px dashed green;
+}
+
+main {
+    border: 1px solid blue;
+}
+
+section {
+    border: 1px dashed gold;
+}
+
+aside {
+    border: 1px dashed lightskyblue;
+}
+
+footer {
+    border: 1px dashed magenta;
+}
+
+#wrapper, header, nav, main, section, aside, footer {
+    padding: 2px;
+}
+
+/*
+  Html Elements Structure
+┌──────────────────────
+│ Body
+│ ┌────────────────────
+│ │ #wrapper
+│ │ ┌──────────────────
+│ │ │ Header
+│ │ │ ┌────────────────
+│ │ │ │ Nav
+│ │ │ └────────────────
+│ │ └──────────────────
+│ │ ┌──────────────────
+│ │ │ Main
+│ │ │ ┌────────────────
+│ │ │ │ Section
+│ │ │ └────────────────
+│ │ │ ┌────────────────
+│ │ │ │ Aside
+│ │ │ └────────────────
+│ │ └──────────────────
+│ │ ┌──────────────────
+│ │ │ Footer
+│ │ └──────────────────
+│ └────────────────────
+└──────────────────────
+  File Structure
+┌──────────────────────
+│ layouts/PageLayout.astro
+│ ┌────────────────────
+│ │ ┌──────────────────
+│ │ │ components/mainHeader.astro
+│ │ │ ┌────────────────
+│ │ │ │ components/mainNav.astro
+│ │ │ └────────────────
+│ │ └──────────────────
+│ │ ┌──────────────────
+│ │ │ components/articleComponent.astro
+│ │ │ pages/overview.md
+│ │ │ (slot)
+│ │ │
+│ │ │
+│ │ └──────────────────
+│ │ ┌──────────────────
+│ │ │
+│ │ └──────────────────
+│ └────────────────────
+└──────────────────────
+*/

@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/TailwindElementsLayout.astro'
+import Accordion1 from '../components/accordions/accordion1.astro'
+import Flush from '../components/accordions/flush.astro'
+import Open from '../components/accordions/open.astro'
+const title = 'Accordions'
+const description = ''
+const { content } = Astro.props
+---
+
+<Layout content={{title}}>
+    <Accordion1><h2>Titre</h2></Accordion1>
+    <Flush />
+    <Open />
+</Layout>
+
+<style global>
+    h2 {
+        @apply text-xl
+    }
+</style>
