@@ -1,0 +1,33 @@
+---
+import PageLayout from '../../layouts/pageLayout.astro'
+import Header from '../../layouts/headerLayout.astro'
+import Main from '../../layouts/mainLayout.astro'
+import Footer from '../../layouts/footerLayout.astro'
+const { content } = Astro.props
+---
+
+<PageLayout content={content}>
+	<Header />
+	<Main><slot /></Main>
+	<Footer />
+</PageLayout>
+
+
+
+<style is:global>
+	body {
+		@apply min-h-screen flex flex-col
+	}
+	header, footer {
+		@apply p-4
+	}
+	main {
+		@apply grow mx-auto flex flex-col md:flex-row p-4 lg:w-5/6
+	}
+	aside {
+		@apply p-4 border
+	}
+	#grid-main {
+		@apply grow p-4 border
+	}
+</style>

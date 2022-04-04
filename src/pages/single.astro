@@ -1,0 +1,23 @@
+---
+import { Markdown } from 'astro/components';
+import StyleLayout from '../layouts/layoutStyles/singleColumn.astro'
+const title = "Astro documentation template"
+---
+
+<StyleLayout content={{title}}>
+    <p>This is the Astro documentation website template. Very interesting !</p>
+	<p>Here is the CSS style:</p>
+	<Markdown>
+	```
+	body {
+		@apply min-h-screen flex flex-col
+	}
+	main {
+		@apply grow mx-auto flex flex-col md:flex-row p-4 lg:w-5/6
+	}
+	#grid-main {
+		@apply grow
+	}
+	```
+	</Markdown>
+</StyleLayout>

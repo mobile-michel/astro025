@@ -1,43 +1,76 @@
-# Astro Starter Kit: Minimal
+# Astro 0.26 & Tailwind CSS 3.0.23
 
-```
-npm init astro -- --template minimal
-```
+This project is an attempt to create a collection of templates and components with the utility-first CSS framework Tailwind CSS. It is a work in progress.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
+A preview is available at [Netlify](https://astro025.netlify.app/)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## File Routing
 
-## 🚀 Project Structure
+The files imports are in this logic:
 
-Inside of your Astro project, you'll see the following folders and files:
+    /pages/index.astro -> /layouts/layoutStyles/singleColumn.astro -> /layouts/pageLayout.astro
+
+Then, singleColumn.astro imports three navigation components:
+
+* /components/nav/mainNavbar.astro
+* /components/nav/styleSidebar.astro
+* /components/nav/templateSidebar.astro
+
+## Project Structure
 
 ```
 /
 ├── public/
 ├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── components/
+│   │   └── nav/
+│   │       ├── mainNavbar.astro
+│   │       ├── styleSidebar.astro
+│   │       └── templateSidebar.astro
+│   ├── layouts/
+│   │   ├── layoutStyles/
+│   │   │   ├── featured.astro
+│   │   │   ├── singleColumn.astro
+│   │   │   └── split.astro
+│   │   └── pageLayout.astro
+│   ├── pages/
+│   │   ├── accordion.astro
+│   │   ├── card.astro
+│   │   ├── featured.astro
+│   │   ├── index.astro
+│   │   ├── single.astro
+│   │   └── split.astro
+│   ├── styles/
+│   └── config.ts
+├── astro.config.mjs
+├── package.json
+├── sandbox.config.json
+└── tailwind.config.cjs
 ```
+## HTML5 Elements Structure
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command           | Action                                       |
-|:----------------  |:-------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3000`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://github.com/withastro/astro) or jump into our [Discord server](https://astro.build/chat).
+```
+┌───────────────────────────
+│ <html> pageLayout.astro
+│ ┌─────────────────────────
+│ │ <body> singleColumn.astro
+│ │ ┌───────────────────────
+│ │ │ <header> mainNavbar.astro
+│ │ └───────────────────────
+│ │ ┌───────────────────────
+│ │ │ <main>
+│ │ │ ┌─────────────────────
+│ │ │ │ <aside> styleSidebar.astro
+│ │ │ └─────────────────────
+│ │ │ ┌─────────────────────
+│ │ │ │ <slot /> index.astro
+│ │ │ └─────────────────────
+│ │ │ ┌─────────────────────
+│ │ │ │ <aside> templateSidebar.astro
+│ │ │ └─────────────────────
+│ │ └───────────────────────
+│ │ ┌───────────────────────
+│ │ │ <footer>
+│ │ └───────────────────────
+│ └─────────────────────────
+└───────────────────────────

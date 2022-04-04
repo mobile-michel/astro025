@@ -21,38 +21,38 @@ export const NAV_MAIN = {
 
 export const NAV_TEMPLATE = {
     templates: {
-        path: './rosstopping/index.html',
+        path: './rosstoppingTemplates/index.html',
         title: 'Raw templates'
     },
     skycrapper: {
-        path: '/skycrapper',
+        path: '/rosstopping/skycrapper',
         title: 'Skycrapper'
     },
     fullscreen: {
-        path: '/fullscreen',
+        path: '/rosstopping/fullscreen',
         title: 'Fullscreen'
     },
     blocks: {
-        path: '/blocks',
+        path: '/rosstopping/blocks',
         title: 'Blocks'
     },
     marketing: {
-        path: '/marketing',
+        path: '/rosstopping/marketing',
         title: 'Marketing'
     },
     product: {
-        path: '/product',
+        path: '/rosstopping/product',
         title: 'Product'
     },
     card: {
-        path: '/card',
+        path: '/rosstopping/card',
         title: 'Cards'
     }
 }
 
 export const NAV_STYLE = {
     single: {
-        path: '/',
+        path: '/single',
         title: 'Single column'
     },
     split: {

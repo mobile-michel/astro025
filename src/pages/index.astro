@@ -1,23 +1,16 @@
 ---
-import { Markdown } from 'astro/components';
 import StyleLayout from '../layouts/layoutStyles/singleColumn.astro'
 const title = "Astro documentation template"
 ---
 
 <StyleLayout content={{title}}>
     <p>This is the Astro documentation website template. Very interesting !</p>
-	<p>Here is the CSS style:</p>
-	<Markdown>
-	```
-	body {
-		@apply min-h-screen flex flex-col
-	}
-	main {
-		@apply grow mx-auto flex flex-col md:flex-row p-4 lg:w-5/6
-	}
-	#grid-main {
-		@apply grow
-	}
-	```
-	</Markdown>
+	<h2>A collection of Tailwind CSS templates from Ross Topping</h2>
+    <ul>
+        <li><a href="/rosstopping/skycrapper">Skycrapper</a>, a assymetrical template</li>
+        <li><a href="/rosstopping/fullscreen">Fullscreen</a>, a full screen photo</li>
+        <li><a href="/rosstopping/blocks">Blocks</a>, a grid of cards</li>
+        <li><a href="/rosstopping/marketing">Marketing</a>, a single column template</li>
+        <li><a href="/rosstopping/product">Product</a>, a split screen</li>
+    </ul>
 </StyleLayout>
