@@ -2,7 +2,9 @@
 
 This project is an attempt to create a collection of templates and components with the utility-first CSS framework Tailwind CSS. It is a work in progress.
 
-A preview is available at [Netlify](https://astro025.netlify.app/)
+Templates are from [Ross Topping](https://github.com/rosstopping) and components are from [Tailwind Elements](https://tailwind-elements.com/).
+
+A preview is available at [Netlify](https://astro025.netlify.app/).
 
 ## File Routing
 
@@ -15,6 +17,8 @@ Then, singleColumn.astro imports three navigation components:
 * /components/nav/mainNavbar.astro
 * /components/nav/styleSidebar.astro
 * /components/nav/templateSidebar.astro
+
+The navigation links are all imported from /src/config.ts. Title is routing until the pageLayout.astro.
 
 ## Project Structure
 
