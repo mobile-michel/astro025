@@ -1,0 +1,10 @@
+---
+let data = await Astro.glob('../../pages/plan/*.md')
+---
+			<aside>
+				<h3>Components</h3>
+				<ul>{data.map((post) => (
+					<li><a href={post.frontmatter.url}>{post.frontmatter.link}</a></li>
+				))}
+				</ul>
+			</aside>

@@ -1,9 +1,41 @@
 ---
-import ArticleComponent from '../components/articleComponent.astro'
-const title = "Tirop's Angels"
+import { Markdown } from 'astro/components';
+import LayoutStyle from '../layouts/pageLayout.astro'
+const title = "Astro documentation template"
 ---
 
-<ArticleComponent content={title}>
-    <h2>Ross Toping templates</h2>
-    <p><a href="https://templates.digizu.co.uk/">Preview on-line</a></p>
-</ArticleComponent>
+<LayoutStyle content={{title}}>
+    <p>This is the Astro documentation website template. Very interesting !</p>
+	<p>Here is the CSS style:</p>
+	<Markdown>
+	```
+	body {
+		@apply min-h-screen flex flex-col
+	}
+	main {
+		@apply grow mx-auto flex flex-col md:flex-row p-4 lg:w-5/6
+	}
+	#grid-main {
+		@apply grow
+	}
+	```
+	</Markdown>
+</LayoutStyle>
+
+<style is:global>
+	body {
+		@apply bg-slate-100 min-h-screen flex flex-col
+	}
+	header, footer {
+		@apply bg-cyan-50 p-4
+	}
+	main {
+		@apply bg-white grow mx-auto flex flex-col md:flex-row p-4 lg:w-5/6
+	}
+	aside {
+		@apply p-4 border
+	}
+	#grid-main {
+		@apply grow p-4 border
+	}
+</style>

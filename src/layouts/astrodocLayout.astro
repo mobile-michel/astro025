@@ -1,0 +1,52 @@
+---
+import Aside from '../components/mainComponents/aside.astro'
+import {SITE} from '../config.ts'
+const { content } = Astro.props
+---
+
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{content.title} | {SITE.title}</title>
+	<meta name="description" content={SITE.description}>
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+</head>
+<body>
+	<header>
+		<nav title="Top Navigation"><span>Top Navigation</span></nav>
+	</header>
+	<main>
+		<aside id="grid-left">
+			<nav aria-labelledby="grid-left"></nav>
+		</aside>
+		<div id="grid-main">
+			<article>
+				<slot />
+			</article>
+		</div>
+		<aside id="grid-right">
+			<nav aria-labelledby="grid-right"><span>Aside navigation in grid-right</span></nav>
+		</aside>
+	</main>
+	<footer>
+		<nav title="Footer Navigation"><span>Footer</span></nav>
+	</footer>
+</body>
+</html>
+
+<style is:global>
+	body {
+		@apply bg-slate-100
+	}
+	header, footer {
+		@apply bg-cyan-50
+	}
+	main {
+		@apply bg-white
+	}
+</style>

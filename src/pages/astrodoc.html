@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en" class="initial astro-3P2XRIHJ">
+
+<head>
+	<!-- Global Metadata -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<meta name="theme-color" content="hsl(256, 44%, 15%)" media="(prefers-color-scheme: dark)">
+	<meta name="theme-color" content="hsl(273, 37%, 93%)" media="(prefers-color-scheme: light)">
+	<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+	<link rel="alternate icon" type="image/x-icon" href="/favicon.ico">
+	<link rel="sitemap" href="/sitemap.xml">
+
+	<!-- Global CSS -->
+	<link rel="stylesheet" href="../styles/theme.css">
+	<link rel="stylesheet" href="../styles/index.css">
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<!-- Preload Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&display=swap" rel="stylesheet">
+
+	<!-- Scrollable a11y code helper -->
+	<script type="module" src="/make-scrollable-code-focusable.js"></script>
+
+	<!-- This is intentionally inlined to avoid FOUC -->
+	<script>
+		const root = document.documentElement;
+		const theme = localStorage.getItem('theme');
+		if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+			root.classList.add('theme-dark');
+		} else {
+			root.classList.remove('theme-dark');
+		}
+	</script>
+
+	<!-- Double-click to highlight code blocks (inline only). -->
+	<script>
+		document.addEventListener('dblclick', (el) => {
+			if (el.target.nodeName !== 'CODE') {
+				return;
+			}
+			if (el.target.parentElement.nodeName === 'PRE') {
+				return;
+			}
+			let range = new Range();
+			range.setStart(el.target, 0);
+			range.setEnd(el.target, 1);
+			document.getSelection().removeAllRanges();
+			document.getSelection().addRange(range);
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-130280175-15"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-130280175-15');
+	</script>
+
+	<!-- Page Metadata -->
+	<link rel="canonical" href="https://docs.astro.build/en/migrate/">
+
+	<!-- Algolia docsearch language facet -->
+	<meta name="docsearch:language" content="en">
+
+	<!-- OpenGraph Tags -->
+	<meta property="og:title" content="Migration Guide">
+	<meta property="og:type" content="article">
+	<meta property="og:url" content="https://docs.astro.build/en/migrate/">
+	<meta property="og:locale" content="en">
+	<meta property="og:image" content="https://docs.astro.build/default-og-image.png?v=1">
+	<meta property="og:image:alt"
+		content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+	<meta name="description" property="og:description"
+		content="How to migrate your project to latest version of Astro.">
+	<meta property="og:site_name" content="Astro Documentation">
+
+	<!-- Twitter Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="astrodotbuild">
+	<meta name="twitter:title" content="Migration Guide">
+	<meta name="twitter:description" content="How to migrate your project to latest version of Astro.">
+	<meta name="twitter:image" content="https://docs.astro.build/default-og-image.png?v=1">
+	<meta name="twitter:image:alt"
+		content="astro logo on a starry expanse of space, with a purple saturn-like planet floating in the right foreground">
+
+	<!--
+  TODO: Add json+ld data, maybe https://schema.org/APIReference makes sense?
+  Docs: https://developers.google.com/search/docs/advanced/structured-data/intro-structured-data
+  https://www.npmjs.com/package/schema-dts seems like a great resource for implementing this.
+  Even better, there’s a React component that integrates with `schema-dts`: https://github.com/google/react-schemaorg
+-->
+
+	<title>Migration Guide 🚀 Astro Documentation</title>
+
+	<link rel="stylesheet" href="/assets/asset.4f3761c3.css">
+	</link>
+	<style astro-style="true">
+		astro-root,
+		astro-fragment {
+			display: contents;
+		}
+	</style>
+	<script type="module" data-astro-component-hydration astro-script="/en/migrate/script-0">import setup from '../../entry.aa92ab65.js';
+		import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
+		setup("Z2meBqb", { name: "SidebarToggle", value: true }, async () => {
+			const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.06fb6e71.js"), import("../../entry.52f57af4.js")]);
+			return (el, children) => hydrate(el)(Component, { "class": "astro-HHNQFKH6" }, children);
+
+		});
+	</script>
+	<script type="module" data-astro-component-hydration astro-script="/en/migrate/script-1">import setup from '../../entry.aa92ab65.js';
+		import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
+		setup("1h2Xz", { name: "LanguageSelect", value: true }, async () => {
+			const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.7dc6531e.js"), import("../../entry.52f57af4.js")]);
+			return (el, children) => hydrate(el)(Component, { "lang": "en", "class": "astro-HHNQFKH6" }, children);
+
+		});
+	</script>
+	<script type="module" data-astro-component-hydration astro-script="/en/migrate/script-2">import setup from '../../entry.5ef43cd1.js';
+		import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
+		setup("Z2791tM", { name: "SidebarToggleTabGroup", value: true }, async () => {
+			const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.edd55c70.js"), import("../../entry.52f57af4.js")]);
+			return (el, children) => hydrate(el)(Component, { "defaultActiveTab": "learn", "labels": { "learn": "Learn", "api": "Reference" }, "class": "astro-Q7LDJ5LZ" }, children);
+
+		});
+	</script>
+	<script type="module" data-astro-component-hydration astro-script="/en/migrate/script-3">import setup from '../../entry.8f666bc1.js';
+		import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
+		setup("1Bu7BL", { name: "TableOfContents", value: "(min-width: 50em)" }, async () => {
+			const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.b4e20f54.js"), import("../../entry.52f57af4.js")]);
+			return (el, children) => hydrate(el)(Component, { "headers": [{ "depth": 2, "slug": "migrate-to-v026", "text": "Migrate to v0.26¶" }, { "depth": 3, "slug": "new-configuration-api", "text": "New Configuration API¶" }, { "depth": 3, "slug": "new-markdown-api", "text": "New Markdown API¶" }, { "depth": 3, "slug": "new-default-script-behavior", "text": "New Default Script Behavior¶" }, { "depth": 3, "slug": "updated-astrorequest-api", "text": "Updated Astro.request API¶" }, { "depth": 3, "slug": "other-changes", "text": "Other Changes¶" }, { "depth": 2, "slug": "migrate-to-v025", "text": "Migrate to v0.25¶" }, { "depth": 3, "slug": "astro-integrations", "text": "Astro Integrations¶" }, { "depth": 4, "slug": "removed-built-in-framework-support", "text": "Removed: Built-in Framework Support¶" }, { "depth": 4, "slug": "deprecated-renderers", "text": "Deprecated: Renderers¶" }, { "depth": 4, "slug": "handling-peer-dependencies", "text": "Handling Peer Dependencies¶" }, { "depth": 3, "slug": "updated-syntax-highlighting", "text": "Updated: Syntax Highlighting¶" }, { "depth": 4, "slug": "the-prism--component-has-a-new-home", "text": "The \u003CPrism \u002F\u003E component has a new home¶" }, { "depth": 3, "slug": "css-parser-upgrade", "text": "CSS Parser Upgrade¶" }, { "depth": 2, "slug": "migrate-to-v024", "text": "Migrate to v0.24¶" }, { "depth": 3, "slug": "deprecated-astroresolve", "text": "Deprecated: Astro.resolve()¶" }, { "depth": 4, "slug": "how-to-resolve-css-files", "text": "How to Resolve CSS Files¶" }, { "depth": 4, "slug": "how-to-resolve-javascript-files", "text": "How to Resolve JavaScript Files¶" }, { "depth": 4, "slug": "how-to-resolve-images--other-assets", "text": "How to Resolve Images & Other Assets¶" }, { "depth": 3, "slug": "deprecated-script-default-processing", "text": "Deprecated: \u003Cscript\u003E Default Processing¶" }, { "depth": 2, "slug": "migrate-to-v023", "text": "Migrate to v0.23¶" }, { "depth": 3, "slug": "missing-sass-error", "text": "Missing Sass Error¶" }, { "depth": 3, "slug": "deprecated-unescaped-html", "text": "Deprecated: Unescaped HTML¶" }, { "depth": 2, "slug": "migrate-to-v021", "text": "Migrate to v0.21¶" }, { "depth": 3, "slug": "vite", "text": "Vite¶" }, { "depth": 4, "slug": "vite-plugins", "text": "Vite Plugins¶" }, { "depth": 4, "slug": "vite-changes-to-renderers", "text": "Vite Changes to Renderers¶" }, { "depth": 3, "slug": "aliasing", "text": "Aliasing¶" }, { "depth": 3, "slug": "file-extensions-in-imports", "text": "File Extensions in Imports¶" }, { "depth": 3, "slug": "removed-components-in-frontmatter", "text": "Removed: Components in Frontmatter¶" }, { "depth": 3, "slug": "styling-changes", "text": "Styling Changes¶" }, { "depth": 4, "slug": "autoprefixer", "text": "Autoprefixer¶" }, { "depth": 4, "slug": "tailwind-css", "text": "Tailwind CSS¶" }, { "depth": 3, "slug": "known-issues", "text": "Known Issues¶" }, { "depth": 4, "slug": "imports-on-top", "text": "Imports on top¶" }], "labels": { "onThisPage": "On this page", "overview": "Overview" }, "class": "astro-QUEQLUEF" }, children);
+
+		});
+	</script>
+	<script type="module" data-astro-component-hydration astro-script="/en/migrate/script-4">import setup from '../../entry.a837d42f.js';
+		import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
+		setup("Z29erab", { name: "ThemeToggleButton", value: true }, async () => {
+			const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.6013e451.js"), import("../../entry.52f57af4.js")]);
+			return (el, children) => hydrate(el)(Component, { "class": "astro-QUEQLUEF" }, children);
+
+		});
+	</script>
+	<script type="module" data-astro-component-hydration astro-script="/en/migrate/script-5">import setup from '../../entry.aa92ab65.js';
+		import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
+		setup("ZfMNup", { name: "Search", value: true }, async () => {
+			const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.348cd9e7.js"), import("../../entry.853d7144.js")]);
+			return (el, children) => hydrate(el)(Component, { "lang": "en" }, children);
+
+		});
+	</script>
+	<script type="module" data-astro-component-hydration astro-script="/en/migrate/script-6">import setup from '../../entry.8f666bc1.js';
+		import 'data:text/javascript;charset=utf-8,//[no before-hydration script]';
+		setup("2tzRkC", { name: "TableOfContents", value: "(max-width: 50em)" }, async () => {
+			const [{ default: Component }, { default: hydrate }] = await Promise.all([import("../../entry.b4e20f54.js"), import("../../entry.52f57af4.js")]);
+			return (el, children) => hydrate(el)(Component, { "headers": [{ "depth": 2, "slug": "migrate-to-v026", "text": "Migrate to v0.26¶" }, { "depth": 3, "slug": "new-configuration-api", "text": "New Configuration API¶" }, { "depth": 3, "slug": "new-markdown-api", "text": "New Markdown API¶" }, { "depth": 3, "slug": "new-default-script-behavior", "text": "New Default Script Behavior¶" }, { "depth": 3, "slug": "updated-astrorequest-api", "text": "Updated Astro.request API¶" }, { "depth": 3, "slug": "other-changes", "text": "Other Changes¶" }, { "depth": 2, "slug": "migrate-to-v025", "text": "Migrate to v0.25¶" }, { "depth": 3, "slug": "astro-integrations", "text": "Astro Integrations¶" }, { "depth": 4, "slug": "removed-built-in-framework-support", "text": "Removed: Built-in Framework Support¶" }, { "depth": 4, "slug": "deprecated-renderers", "text": "Deprecated: Renderers¶" }, { "depth": 4, "slug": "handling-peer-dependencies", "text": "Handling Peer Dependencies¶" }, { "depth": 3, "slug": "updated-syntax-highlighting", "text": "Updated: Syntax Highlighting¶" }, { "depth": 4, "slug": "the-prism--component-has-a-new-home", "text": "The \u003CPrism \u002F\u003E component has a new home¶" }, { "depth": 3, "slug": "css-parser-upgrade", "text": "CSS Parser Upgrade¶" }, { "depth": 2, "slug": "migrate-to-v024", "text": "Migrate to v0.24¶" }, { "depth": 3, "slug": "deprecated-astroresolve", "text": "Deprecated: Astro.resolve()¶" }, { "depth": 4, "slug": "how-to-resolve-css-files", "text": "How to Resolve CSS Files¶" }, { "depth": 4, "slug": "how-to-resolve-javascript-files", "text": "How to Resolve JavaScript Files¶" }, { "depth": 4, "slug": "how-to-resolve-images--other-assets", "text": "How to Resolve Images & Other Assets¶" }, { "depth": 3, "slug": "deprecated-script-default-processing", "text": "Deprecated: \u003Cscript\u003E Default Processing¶" }, { "depth": 2, "slug": "migrate-to-v023", "text": "Migrate to v0.23¶" }, { "depth": 3, "slug": "missing-sass-error", "text": "Missing Sass Error¶" }, { "depth": 3, "slug": "deprecated-unescaped-html", "text": "Deprecated: Unescaped HTML¶" }, { "depth": 2, "slug": "migrate-to-v021", "text": "Migrate to v0.21¶" }, { "depth": 3, "slug": "vite", "text": "Vite¶" }, { "depth": 4, "slug": "vite-plugins", "text": "Vite Plugins¶" }, { "depth": 4, "slug": "vite-changes-to-renderers", "text": "Vite Changes to Renderers¶" }, { "depth": 3, "slug": "aliasing", "text": "Aliasing¶" }, { "depth": 3, "slug": "file-extensions-in-imports", "text": "File Extensions in Imports¶" }, { "depth": 3, "slug": "removed-components-in-frontmatter", "text": "Removed: Components in Frontmatter¶" }, { "depth": 3, "slug": "styling-changes", "text": "Styling Changes¶" }, { "depth": 4, "slug": "autoprefixer", "text": "Autoprefixer¶" }, { "depth": 4, "slug": "tailwind-css", "text": "Tailwind CSS¶" }, { "depth": 3, "slug": "known-issues", "text": "Known Issues¶" }, { "depth": 4, "slug": "imports-on-top", "text": "Imports on top¶" }], "labels": { "onThisPage": "On this page", "overview": "Overview" }, "class": "astro-F2L4ZIRO" }, children);
+
+		});
+	</script>
+</head>
+
+<body>
+	<header class="astro-HHNQFKH6">
+		<a href="#article" class="sr-only focus:not-sr-only skiplink astro-CQB2UD6V"><span class="astro-CQB2UD6V">Skip
+				to Content</span></a>
+
+
+
+		<nav class="nav-wrapper astro-HHNQFKH6" title="Top Navigation">
+			<div class="menu-toggle astro-HHNQFKH6">
+				<astro-root uid="Z2meBqb"><button type="button" aria-pressed="false" id="menu-toggle"><svg
+							xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24"
+							stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								d="M4 6h16M4 12h16M4 18h16"></path>
+						</svg><span class="sr-only">Toggle sidebar</span></button></astro-root>
+			</div>
+			<div class="logo flex astro-HHNQFKH6">
+				<a href="https://astro.build/" class="astro-HHNQFKH6">
+					<h1 class="sr-only astro-HHNQFKH6">Astro</h1>
+					<svg xmlns="http://www.w3.org/2000/svg" width="363" height="102" viewBox="0 0 363 102" fill="none"
+						class="astro-HHNQFKH6">
+						<style>
+							.text {
+								fill: var(--theme-text);
+							}
+
+							.hover {
+								fill: var(--theme-accent);
+							}
+						</style>
+						<path class="text astro-HHNQFKH6" fill-rule="evenodd"
+							d="M55.07 14.216l16.81 54.865a72.6 72.6 0 00-20.765-6.984L39.808 24.135a1.475 1.475 0 00-2.827.005L25.81 62.078a72.598 72.598 0 00-20.859 6.995L21.847 14.2c.998-3.243 1.497-4.865 2.47-6.066a8 8 0 013.239-2.392c1.434-.576 3.13-.576 6.524-.576h8.751c3.398 0 5.097 0 6.532.577a8 8 0 013.241 2.397c.972 1.203 1.47 2.827 2.465 6.076z"
+							clip-rule="evenodd"></path>
+						<path fill="#FF5D01" fill-rule="evenodd"
+							d="M54.618 71.779c-2.863 2.432-8.578 4.091-15.161 4.091-8.08 0-14.852-2.499-16.649-5.86-.642 1.926-.786 4.13-.786 5.539 0 0-.423 6.915 4.418 11.725 0-2.498 2.037-4.522 4.551-4.522 4.309 0 4.304 3.734 4.3 6.764v.27c0 4.6 2.829 8.541 6.852 10.203a9.22 9.22 0 01-.938-4.064c0-4.386 2.592-6.02 5.604-7.917 2.396-1.51 5.06-3.188 6.894-6.554a12.297 12.297 0 001.502-5.905c0-1.314-.206-2.581-.587-3.77z"
+							clip-rule="evenodd" class="astro-HHNQFKH6"></path>
+						<path class="text astro-HHNQFKH6"
+							d="M126.554 69c13.115 0 21.047-3.14 25.68-9.654 0 2.904.157 5.651.55 8.163h7.774c-.706-4.082-.863-6.75-.863-14.128V43.334c0-10.831-8.403-16.56-24.424-16.56-15.47 0-25.522 5.964-26.779 14.598h8.246c1.256-5.808 7.774-8.87 18.533-8.87 10.602 0 16.885 3.69 16.885 9.969v.785l-24.502 1.413c-9.974.549-13.665 1.962-16.492 4.003-2.67 1.962-4.162 5.023-4.162 8.555C107 64.683 114.696 69 126.554 69zm2.513-5.573c-9.109 0-14.135-2.119-14.135-6.357 0-4.553 3.141-6.593 14.214-7.3l23.01-1.412v1.805c0 8.241-9.66 13.264-23.089 13.264zM196.086 69c16.256 0 22.775-5.337 22.775-13.108 0-6.436-4.006-9.732-14.215-10.596l-19.083-1.49c-5.183-.393-8.088-1.884-8.088-5.102 0-4.082 4.476-6.201 14.135-6.201 10.995 0 16.727 2.198 20.497 7.064l6.361-3.061c-3.927-6.122-12.644-9.733-26.151-9.733-13.9 0-22.224 4.631-22.224 12.244 0 6.829 4.947 10.125 14.292 10.91l18.926 1.492c6.204.47 8.089 1.726 8.089 4.944 0 4.631-4.79 6.829-14.293 6.829-11.544 0-18.847-3.14-22.381-8.87l-6.204 3.376C173.312 64.918 181.715 69 196.086 69zM234.929 34.151v18.916c0 7.77 2.67 15.54 17.198 15.54 3.691 0 8.167-.706 10.131-1.57V60.68c-2.749.628-6.047 1.1-9.267 1.1-6.832 0-10.523-2.67-10.523-9.42V34.151h19.633v-5.887h-19.633V15l-7.539 3.061v10.204h-12.33v5.886h12.33zM280.823 28.265h-6.911v39.244h7.461V52.83c0-5.65 1.099-10.439 4.24-13.735 2.749-3.061 6.283-4.788 12.487-4.788 2.12 0 3.455.157 5.262.471v-7.22c-1.65-.393-3.063-.472-5.184-.472-8.402 0-15.078 4.945-17.355 12.558v-11.38zM334.807 69C351.534 69 363 60.523 363 47.887c0-12.637-11.466-21.114-28.193-21.114-16.727 0-28.193 8.477-28.193 21.114C306.614 60.523 318.08 69 334.807 69zm0-6.2c-12.329 0-20.261-5.809-20.261-14.913 0-9.105 7.932-14.913 20.261-14.913 12.251 0 20.261 5.808 20.261 14.913 0 9.104-8.01 14.912-20.261 14.912z">
+						</path>
+					</svg>
+				</a>
+				<a href="https://docs.astro.build/" class="astro-HHNQFKH6">
+					<h1 class="sr-only astro-HHNQFKH6">Docs</h1>
+					<svg xmlns="http://www.w3.org/2000/svg" width="226" height="102" viewBox="0 0 226 102" fill="none"
+						class="astro-HHNQFKH6">
+						<path fill="currentColor"
+							d="M25.805 68c14.688 0 24.883-8.41 24.883-21.14 0-12.786-9.62-19.756-24.653-19.756H0V68h25.805zm-14.17-33.005H24.25c8.352 0 14.17 4.09 14.17 12.039 0 8.236-5.3 13.075-14.113 13.075H11.635V34.995zM82.673 69.382c16.704 0 27.418-8.582 27.418-21.83 0-13.248-10.771-21.83-27.418-21.83-16.589 0-27.418 8.582-27.418 21.83 0 13.19 10.83 21.83 27.418 21.83zm0-8.64c-9.1 0-15.149-5.299-15.149-13.19 0-7.891 6.048-13.19 15.15-13.19 9.1 0 15.205 5.299 15.205 13.19 0 7.891-6.105 13.19-15.206 13.19zM141.497 69.382c13.306 0 22.637-5.299 25.978-14.572l-11.866-2.535c-1.67 5.415-6.393 8.295-13.709 8.295-9.216 0-15.033-5.127-15.033-13.018 0-8.006 5.702-13.018 14.918-13.018 7.43 0 12.154 3.053 13.709 8.64l12.038-2.13c-2.707-9.562-12.268-15.322-25.574-15.322-16.128 0-27.302 9.043-27.302 22.003 0 13.133 10.425 21.657 26.841 21.657zM194.94 69.382c14.745 0 23.212-5.01 23.212-14.054 0-7.603-4.665-10.944-15.955-12.096l-11.289-1.094c-5.242-.576-6.97-1.556-6.97-4.09 0-2.765 3.456-4.262 9.792-4.262 7.834 0 13.709 2.476 16.762 6.508l7.315-6.163c-5.069-5.702-13.133-8.41-23.501-8.41-13.997 0-21.888 4.781-21.888 12.903 0 7.546 4.781 11.232 14.803 12.326l12.557 1.383c4.896.518 6.624 1.555 6.624 4.09 0 3.225-3.456 4.723-10.886 4.723-8.352 0-14.688-3.226-18.087-8.007l-8.294 5.818c4.205 6.451 13.709 10.425 25.805 10.425z"
+							class="astro-HHNQFKH6"></path>
+					</svg>
+				</a>
+			</div>
+			<div style="flex-grow: 1;" class="astro-HHNQFKH6"></div>
+			<astro-root uid="1h2Xz">
+				<div class="language-select-wrapper"><svg aria-hidden="true" focusable="false" role="img"
+						xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.6 77.3" height="1.2em" width="1.2em">
+						<path fill="currentColor"
+							d="M61,24.6h7.9l18.7,51.6h-7.7l-5.4-15.5H54.3l-5.6,15.5h-7.2L61,24.6z M72.6,55l-8-22.8L56.3,55H72.6z">
+						</path>
+						<path fill="currentColor"
+							d="M53.6,60.6c-10-4-16-9-22-14c0,0,1.3,1.3,0,0c-6,5-20,13-20,13l-4-6c8-5,10-6,19-13c-2.1-1.9-12-13-13-19h8          c4,9,10,14,10,14c10-8,10-19,10-19h8c0,0-1,13-12,24l0,0c5,5,10,9,19,13L53.6,60.6z M1.6,16.6h56v-8h-23v-7h-9v7h-24V16.6z">
+						</path>
+					</svg><select class="language-select" aria-label="Select language">
+						<option selected value="en"><span>English</span></option>
+						<option value="de"><span>Deutsch</span></option>
+						<option value="nl"><span>Nederlands</span></option>
+						<option value="pt-br"><span>Português do Brasil</span></option>
+						<option value="fi"><span>Suomi</span></option>
+						<option value="es"><span>Español</span></option>
+						<option value="zh-CN"><span>简体中文</span></option>
+						<option value="zh-TW"><span>正體中文</span></option>
+						<option value="bg"><span>Български</span></option>
+						<option value="fr"><span>Français</span></option>
+						<option value="bn"><span>বাংলা</span></option>
+						<option value="kr"><span>한국어</span></option>
+						<option value="ar"><span>العربية</span></option>
+						<option value="da"><span>Dansk</span></option>
+						<option value="ja"><span>日本語</span></option>
+						<option value="ru"><span>Русский</span></option>
+						<option value="it"><span>Italiano</span></option>
+						<option value="pl"><span>Polish</span></option>
+						<option value="hu"><span>Hungarian</span></option>
+					</select></div>
+			</astro-root>
+			<div class="search-item astro-HHNQFKH6">
+				<astro-root uid="ZfMNup"><button type="button" class="search-input"><svg width="24" height="24"
+							fill="none">
+							<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round"></path>
+						</svg><span class="search-placeholder">Search</span><span class="search-hint"><span
+								class="sr-only">Press </span><kbd>/</kbd><span class="sr-only"> to
+								search</span></span></button></astro-root>
+			</div>
+		</nav>
+	</header>
+
+
+
+	<main class="layout astro-3P2XRIHJ">
+		<aside id="grid-left" class="grid-sidebar astro-3P2XRIHJ" title="Site Navigation">
+			<nav aria-labelledby="grid-left" class="astro-Q7LDJ5LZ">
+				<astro-root uid="Z2791tM">
+					<div class="TabGroup"><button class="active">Learn</button><button class>Reference</button></div>
+				</astro-root>
+				<ul class="nav-groups astro-Q7LDJ5LZ">
+
+					<li class="nav-group learn active astro-QALMWM2M">
+						<div class="astro-QALMWM2M">
+							<h2 class="nav-group-title astro-QALMWM2M">Start Here</h2>
+							<ul class="astro-QALMWM2M">
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/getting-started/" aria-current="false" class="astro-QALMWM2M">Getting
+										Started</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/install/" aria-current="false" class="astro-QALMWM2M">Installation</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/editor-setup/" aria-current="false" class="astro-QALMWM2M">Editor
+										Setup</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/migrate/" aria-current="page" class="astro-QALMWM2M">Migration
+										Guide</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/integrations/integrations/" aria-current="false"
+										class="astro-QALMWM2M">Built with Astro</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/comparing-astro-vs-other-tools/" aria-current="false"
+										class="astro-QALMWM2M">Astro vs. X</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-group learn active astro-QALMWM2M">
+						<div class="astro-QALMWM2M">
+							<h2 class="nav-group-title astro-QALMWM2M">Core Concepts</h2>
+							<ul class="astro-QALMWM2M">
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/core-concepts/partial-hydration/" aria-current="false"
+										class="astro-QALMWM2M">Partial Hydration</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-group learn active astro-QALMWM2M">
+						<div class="astro-QALMWM2M">
+							<h2 class="nav-group-title astro-QALMWM2M">Basics</h2>
+							<ul class="astro-QALMWM2M">
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/core-concepts/project-structure/" aria-current="false"
+										class="astro-QALMWM2M">Project Structure</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/core-concepts/astro-components/" aria-current="false"
+										class="astro-QALMWM2M">Components</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/core-concepts/astro-pages/" aria-current="false"
+										class="astro-QALMWM2M">Pages</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/core-concepts/layouts/" aria-current="false"
+										class="astro-QALMWM2M">Layouts</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/markdown-content/" aria-current="false"
+										class="astro-QALMWM2M">Markdown</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/imports/" aria-current="false" class="astro-QALMWM2M">Static
+										Assets</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+					<li class="nav-group learn active astro-QALMWM2M">
+						<div class="astro-QALMWM2M">
+							<h2 class="nav-group-title astro-QALMWM2M">Features</h2>
+							<ul class="astro-QALMWM2M">
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/configuring-astro/" aria-current="false"
+										class="astro-QALMWM2M">Configuring Astro</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/styling/" aria-current="false" class="astro-QALMWM2M">CSS &
+										Styling</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/debugging/" aria-current="false"
+										class="astro-QALMWM2M">Debugging</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/data-fetching/" aria-current="false" class="astro-QALMWM2M">Data
+										Fetching</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/deploy/" aria-current="false" class="astro-QALMWM2M">Deploy</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/environment-variables/" aria-current="false"
+										class="astro-QALMWM2M">Environment Variables</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/aliases/" aria-current="false" class="astro-QALMWM2M">Import
+										Aliases</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/integrations-guide/" aria-current="false"
+										class="astro-QALMWM2M">Integrations</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/rss/" aria-current="false" class="astro-QALMWM2M">RSS</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/core-concepts/framework-components/" aria-current="false"
+										class="astro-QALMWM2M">UI Frameworks</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+
+
+
+					<li class="nav-group api  astro-QALMWM2M">
+						<div class="astro-QALMWM2M">
+							<h2 class="nav-group-title astro-QALMWM2M">Reference</h2>
+							<ul class="astro-QALMWM2M">
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/reference/configuration-reference/" aria-current="false"
+										class="astro-QALMWM2M">Configuration</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/reference/cli-reference/" aria-current="false"
+										class="astro-QALMWM2M">CLI</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/reference/api-reference/" aria-current="false"
+										class="astro-QALMWM2M">Runtime API</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/reference/integrations-reference/" aria-current="false"
+										class="astro-QALMWM2M">Integrations API</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/core-concepts/routing/" aria-current="false"
+										class="astro-QALMWM2M">Routing Rules</a>
+								</li>
+								<li class="nav-link astro-QALMWM2M">
+									<a href="/en/guides/publish-to-npm/" aria-current="false" class="astro-QALMWM2M">NPM
+										Package Format</a>
+								</li>
+							</ul>
+						</div>
+					</li>
+
+
+
+					<li class="astro-Q7LDJ5LZ">
+						<div class="sponsors astro-VRM6NW7G">
+							<h2 class="sponsors-title astro-VRM6NW7G">Sponsored by</h2>
+							<div class="sponsor astro-VRM6NW7G">
+								<a href="https://www.netlify.com/" aria-label="Go to Netlify website"
+									class="astro-VRM6NW7G">
+									<svg class="sponsor-logo__netlify astro-VRM6NW7G" viewBox="0 0 147 40"
+										xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+										<radialGradient id="netlify-gradient" cx="-779.0521" cy="1839.7205"
+											gradientTransform="matrix(0 38.301 44.1228 0 -81154.2578 29839.2441)"
+											gradientUnits="userSpaceOnUse" r="1.0011" class="astro-VRM6NW7G">
+											<stop offset="0" stop-color="#20c6b7" class="astro-VRM6NW7G"></stop>
+											<stop offset="1" stop-color="#4d9abf" class="astro-VRM6NW7G"></stop>
+										</radialGradient>
+										<path clip-rule="evenodd"
+											d="m53.37 12.98.12 2.2c1.4-1.7 3.24-2.55 5.53-2.55 3.95 0 5.96 2.27 6.03 6.8v12.57h-4.26v-12.32c0-1.21-.26-2.1-.78-2.68s-1.37-.87-2.55-.87c-1.72 0-3 .78-3.84 2.34v13.53h-4.26v-19.02zm24.38 19.37c-2.7 0-4.89-.85-6.57-2.56-1.68-1.7-2.52-3.98-2.52-6.81v-.53c0-1.9.36-3.59 1.1-5.09.73-1.49 1.76-2.66 3.08-3.49s2.79-1.25 4.42-1.25c2.58 0 4.58.83 5.99 2.48s2.11 3.99 2.11 7.01v1.72h-12.4c.13 1.57.65 2.81 1.57 3.73s2.07 1.37 3.46 1.37c1.95 0 3.54-.79 4.77-2.37l2.3 2.2c-.76 1.14-1.77 2.02-3.04 2.65s-2.69.94-4.27.94zm-.51-16.29c-1.17 0-2.11.41-2.83 1.23s-1.18 1.96-1.38 3.43h8.12v-.32c-.09-1.43-.47-2.51-1.14-3.24-.67-.74-1.59-1.1-2.77-1.1zm16.76-7.7v4.62h3.35v3.16h-3.35v10.62c0 .73.14 1.25.43 1.57s.8.48 1.54.48c.5 0 1-.06 1.49-.18v3.31c-.97.27-1.9.4-2.81.4-3.27 0-4.91-1.81-4.91-5.43v-10.77h-3.12v-3.16h3.12v-4.63zm11.14 23.64h-4.26v-27h4.26zm9.17 0h-4.26v-19.02h4.26zm-4.52-23.96c0-.65.21-1.2.62-1.63.42-.43 1.01-.65 1.78-.65s1.37.22 1.79.65.63.98.63 1.64c0 .64-.21 1.18-.63 1.61s-1.02.64-1.79.64-1.36-.21-1.78-.64c-.41-.44-.62-.98-.62-1.62zm10.66 23.96v-15.86h-2.89v-3.16h2.89v-1.74c0-2.11.58-3.74 1.75-4.89s2.81-1.72 4.91-1.72c.75 0 1.54.11 2.39.32l-.1 3.34c-.54-.1-1.08-.15-1.63-.14-2.04 0-3.05 1.05-3.05 3.15v1.69h3.86v3.16h-3.86v15.85zm17.87-6.12 3.86-12.9h4.54l-7.54 21.9c-1.16 3.2-3.12 4.8-5.89 4.8-.62 0-1.3-.11-2.05-.32v-3.31l.81.05c1.07 0 1.88-.2 2.43-.59.54-.39.97-1.05 1.29-1.98l.61-1.64-6.66-18.93h4.6z"
+											fill-rule="evenodd" class="astro-VRM6NW7G"></path>
+										<path
+											d="m27.89 14.14-.01-.01c-.01 0-.02-.01-.02-.01-.02-.02-.03-.06-.03-.09l.77-4.73 3.62 3.63-3.77 1.6c-.01 0-.02.01-.03.01h-.02s-.01-.01-.02-.02c-.14-.16-.31-.29-.49-.38zm5.26-.29 3.88 3.88c.81.81 1.21 1.21 1.35 1.67.02.07.04.14.05.21l-9.26-3.92s-.01 0-.01-.01c-.04-.02-.08-.03-.08-.07s.04-.06.08-.07l.01-.01zm5.12 7c-.2.38-.59.77-1.25 1.43l-4.37 4.37-5.65-1.18-.03-.01c-.05-.01-.1-.02-.1-.06-.04-.47-.28-.9-.66-1.19-.02-.02-.02-.06-.01-.09v-.01l1.06-6.53v-.02c.01-.05.01-.11.06-.11.46-.06.88-.3 1.16-.67.01-.01.01-.02.03-.03.03-.01.07 0 .1.01zm-6.62 6.8-7.19 7.19 1.23-7.56v-.01c0-.01 0-.02.01-.03.01-.02.04-.03.06-.04h.01c.27-.11.51-.29.69-.52.02-.03.05-.06.09-.06h.03zm-8.71 8.71-.81.81-8.95-12.94s-.01-.01-.01-.01c-.01-.02-.03-.04-.03-.06s.01-.03.02-.04l.01-.01c.03-.04.05-.08.07-.12l.02-.03c.01-.02.03-.05.05-.06s.05-.01.07 0l9.92 2.05c.03 0 .05.02.08.03.01.01.02.03.02.04.14.53.52.97 1.03 1.17.03.01.02.05 0 .08-.01.01-.01.03-.01.05-.12.74-1.19 7.27-1.48 9.04zm-1.69 1.69c-.6.59-.95.9-1.35 1.03-.39.12-.81.12-1.21 0-.47-.15-.87-.55-1.67-1.36l-8.99-8.99 2.35-3.64c.01-.02.02-.03.04-.05s.06-.01.09 0c.54.16 1.12.13 1.64-.08.03-.01.05-.02.07 0l.03.03zm-14.09-10.19-2.06-2.06 4.07-1.74c.01 0 .02-.01.03-.01.03 0 .05.03.07.07.04.06.08.12.13.18l.01.02c.01.02 0 .03-.01.05zm-2.98-2.97-2.61-2.61c-.44-.44-.77-.77-.99-1.04l7.94 1.65h.03c.05.01.1.02.1.06 0 .05-.06.07-.11.09l-.02.01zm-4.05-5c.01-.17.04-.33.09-.5.15-.47.55-.87 1.36-1.67l3.34-3.34c1.54 2.23 3.08 4.46 4.63 6.69.03.04.06.08.03.11-.15.16-.29.34-.4.53-.01.02-.03.05-.05.06-.01.01-.03 0-.04 0zm5.68-6.4 4.49-4.49c.42.19 1.96.83 3.33 1.41 1.04.44 1.99.84 2.29.97.03.01.06.02.07.05.01.02 0 .04 0 .06-.14.66.05 1.35.52 1.83.03.03 0 .07-.03.11l-.01.02-4.56 7.06c-.01.02-.02.04-.04.05s-.06.01-.09 0c-.18-.05-.36-.07-.54-.07-.16 0-.34.03-.52.06-.02 0-.04.01-.05 0-.02-.01-.03-.03-.05-.05zm5.4-5.4 5.81-5.81c.81-.81 1.21-1.21 1.67-1.36.39-.12.81-.12 1.21 0 .47.15.87.55 1.67 1.36l1.26 1.26-4.14 6.4c-.01.02-.02.03-.04.05s-.06.01-.09 0c-.66-.2-1.38-.06-1.92.37-.03.03-.07.01-.1 0-.53-.24-4.73-2.01-5.33-2.27zm12.5-3.67 3.82 3.82-.92 5.7v.02c0 .01 0 .03-.01.04-.01.02-.03.02-.05.03-.2.06-.38.15-.55.27-.01.01-.01.01-.02.02s-.02.02-.04.02c-.01 0-.03 0-.04-.01l-5.82-2.47-.01-.01c-.04-.02-.08-.03-.08-.07-.03-.32-.14-.64-.31-.91-.03-.05-.06-.09-.03-.14zm-3.93 8.6 5.45 2.31c.03.01.06.03.08.06.01.02.01.04 0 .06-.02.08-.03.17-.03.26v.15c0 .04-.04.05-.08.07h-.01c-.86.37-12.13 5.17-12.15 5.17s-.03 0-.05-.02c-.03-.03 0-.07.03-.11 0-.01.01-.01.01-.02l4.48-6.94.01-.01c.03-.04.06-.09.1-.09l.05.01c.1.01.19.03.28.03.68 0 1.31-.33 1.69-.9.01-.02.02-.03.03-.04.04-.01.08 0 .11.01zm-6.25 9.19 12.28-5.24s.02 0 .03.02c.07.07.12.11.18.15l.03.02c.02.01.05.03.05.06v.02l-1.05 6.46v.03c-.01.05-.01.11-.06.11-.57.04-1.08.36-1.37.85v.01c-.01.02-.03.05-.05.06s-.05.01-.07 0l-9.79-2.02c-.02-.02-.16-.53-.18-.53z"
+											fill="url(#netlify-gradient)" class="astro-VRM6NW7G"></path>
+									</svg>
+								</a>
+							</div>
+						</div>
+
+
+
+					</li>
+				</ul>
+			</nav>
+
+			<script>
+				window.addEventListener('DOMContentLoaded', (event) => {
+					var target = document.querySelector('[aria-current="page"]');
+					if (target && target.offsetTop > window.innerHeight - 100) {
+						document.querySelector('.nav-groups').scrollTop = target.offsetTop;
+					}
+				});
+			</script>
+
+
+
+		</aside>
+		<div id="grid-main" class="astro-3P2XRIHJ">
+			<article id="article" class="content astro-F2L4ZIRO">
+				<section class="main-section astro-F2L4ZIRO">
+					<h1 class="content-title astro-F2L4ZIRO" id="overview">Migration Guide</h1>
+					<nav class="block lg-hidden astro-F2L4ZIRO">
+						<astro-root uid="2tzRkC">
+							<h2 class="heading">On this page</h2>
+							<ul>
+								<li class="header-link depth-2"><a href="#overview">Overview</a></li>
+								<li class="header-link depth-2"><a href="#migrate-to-v026">Migrate to v0.26</a></li>
+								<li class="header-link depth-3"><a href="#new-configuration-api">New Configuration
+										API</a></li>
+								<li class="header-link depth-3"><a href="#new-markdown-api">New Markdown API</a></li>
+								<li class="header-link depth-3"><a href="#new-default-script-behavior">New Default
+										Script Behavior</a></li>
+								<li class="header-link depth-3"><a href="#updated-astrorequest-api">Updated
+										Astro.request API</a></li>
+								<li class="header-link depth-3"><a href="#other-changes">Other Changes</a></li>
+								<li class="header-link depth-2"><a href="#migrate-to-v025">Migrate to v0.25</a></li>
+								<li class="header-link depth-3"><a href="#astro-integrations">Astro Integrations</a>
+								</li>
+								<li class="header-link depth-3"><a href="#updated-syntax-highlighting">Updated: Syntax
+										Highlighting</a></li>
+								<li class="header-link depth-3"><a href="#css-parser-upgrade">CSS Parser Upgrade</a>
+								</li>
+								<li class="header-link depth-2"><a href="#migrate-to-v024">Migrate to v0.24</a></li>
+								<li class="header-link depth-3"><a href="#deprecated-astroresolve">Deprecated:
+										Astro.resolve()</a></li>
+								<li class="header-link depth-3"><a
+										href="#deprecated-script-default-processing">Deprecated: &lt;script&gt; Default
+										Processing</a></li>
+								<li class="header-link depth-2"><a href="#migrate-to-v023">Migrate to v0.23</a></li>
+								<li class="header-link depth-3"><a href="#missing-sass-error">Missing Sass Error</a>
+								</li>
+								<li class="header-link depth-3"><a href="#deprecated-unescaped-html">Deprecated:
+										Unescaped HTML</a></li>
+								<li class="header-link depth-2"><a href="#migrate-to-v021">Migrate to v0.21</a></li>
+								<li class="header-link depth-3"><a href="#vite">Vite</a></li>
+								<li class="header-link depth-3"><a href="#aliasing">Aliasing</a></li>
+								<li class="header-link depth-3"><a href="#file-extensions-in-imports">File Extensions in
+										Imports</a></li>
+								<li class="header-link depth-3"><a href="#removed-components-in-frontmatter">Removed:
+										Components in Frontmatter</a></li>
+								<li class="header-link depth-3"><a href="#styling-changes">Styling Changes</a></li>
+								<li class="header-link depth-3"><a href="#known-issues">Known Issues</a></li>
+							</ul>
+						</astro-root>
+						<h2 class="heading astro-JGYQTN6E">More
+						</h2>
+						<ul class="astro-JGYQTN6E">
+							<li class="header-link depth-2 astro-JGYQTN6E">
+								<a class="edit-on-github astro-JGYQTN6E"
+									href="https://github.com/withastro/docs/blob/main/src/pages/en/migrate.md"
+									target="_blank">
+									<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen"
+										class="svg-inline--fa fa-pen fa-w-16 astro-JGYQTN6E" role="img"
+										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em"
+										width="1em">
+										<path fill="currentColor"
+											d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z"
+											class="astro-JGYQTN6E"></path>
+									</svg>
+									<span class="astro-JGYQTN6E">Edit this page
+									</span>
+								</a>
+							</li>
+							<li class="header-link depth-2 astro-JGYQTN6E">
+								<a href="https://github.com/withastro/astro/blob/main/CONTRIBUTING.md#translations"
+									target="_blank" class="astro-JGYQTN6E">
+									<svg aria-hidden="true" focusable="false" role="img"
+										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.6 77.3" height="1.24em"
+										width="1.24em" style="margin: -2px;" class="astro-JGYQTN6E">
+										<path fill="currentColor"
+											d="M61,24.6h7.9l18.7,51.6h-7.7l-5.4-15.5H54.3l-5.6,15.5h-7.2L61,24.6z M72.6,55l-8-22.8L56.3,55H72.6z"
+											class="astro-JGYQTN6E"></path>
+										<path fill="currentColor"
+											d="M53.6,60.6c-10-4-16-9-22-14c0,0,1.3,1.3,0,0c-6,5-20,13-20,13l-4-6c8-5,10-6,19-13c-2.1-1.9-12-13-13-19h8          c4,9,10,14,10,14c10-8,10-19,10-19h8c0,0-1,13-12,24l0,0c5,5,10,9,19,13L53.6,60.6z M1.6,16.6h56v-8h-23v-7h-9v7h-24V16.6z"
+											class="astro-JGYQTN6E"></path>
+									</svg>
+									<span class="astro-JGYQTN6E">Translate this page
+									</span>
+								</a>
+							</li>
+							<li class="header-link depth-2 astro-JGYQTN6E">
+								<a href="https://astro.build/chat" target="_blank" class="astro-JGYQTN6E">
+									<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comment-alt"
+										class="svg-inline--fa fa-comment-alt fa-w-16 astro-JGYQTN6E" role="img"
+										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em"
+										width="1em">
+										<path fill="currentColor"
+											d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"
+											class="astro-JGYQTN6E"></path>
+									</svg>
+									<span class="astro-JGYQTN6E">Join our community
+									</span>
+								</a>
+							</li>
+							<li class="header-link depth-2 astro-JGYQTN6E">
+								<a href="https://github.com/withastro/docs" target="_blank" class="astro-JGYQTN6E">
+									<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="github"
+										class="svg-inline--fa fa-brands fa-github fa-w-16 astro-JGYQTN6E" role="img"
+										xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="1em"
+										width="1em" xmlns="http://www.w3.org/2000/svg">
+										<path fill="currentColor"
+											d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+											class="astro-JGYQTN6E"></path>
+									</svg>
+									<span class="astro-JGYQTN6E">GitHub</span>
+								</a>
+							</li>
+						</ul>
+
+
+
+					</nav>
+					<p>This guide exists to help you migrate to the latest versions of Astro and keep your codebase
+						up-to-date.</p>
+					<p>While we try to keep breaking changes to a minimum, we still expect some breaking changes before
+						we hit a v1.0 release. Read the guide below for major highlights and instructions on updating
+						breaking changes.</p>
+					<h2 id="migrate-to-v026">Migrate to v0.26<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#migrate-to-v026">¶</a></h2>
+					<h3 id="new-configuration-api">New Configuration API<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#new-configuration-api">¶</a></h3>
+					<p>Our Configuration API has been redesigned to solve a few glaring points of confusion that had
+						built up over the last year. Most configuration has just been moved or renamed, which will
+						hopefully be a quick update for most users. A few options have been refactored more heavily, and
+						may require a few additional changes:</p>
+					<ul>
+						<li><code>.buildOptions.site</code> has been replaced with <code>.site</code> (your deployed
+							domain) and a new <code>.base</code> (your deployed subpath) option.</li>
+						<li><code>.markdownOptions</code> has been replaced with <code>.markdown</code>, a mostly
+							similar config object with some small changes to simplify Markdown configuration.</li>
+						<li><code>.sitemap</code> has been moved into the <a
+								href="https://www.npmjs.com/package/@astrojs/sitemap">@astrojs/sitemap</a> integration.
+						</li>
+					</ul>
+					<p>If you run Astro with legacy configuration, you will see a warning with instructions on how to
+						update. See our updated <a href="/en/reference/configuration-reference/">Configuration
+							Reference</a> for more information on upgrading.</p>
+					<p>Read <a
+							href="https://github.com/withastro/rfcs/blob/main/proposals/0019-config-finalization.md">RFC0019</a>
+						for more background on these changes.</p>
+					<h3 id="new-markdown-api">New Markdown API<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#new-markdown-api">¶</a></h3>
+					<p>Astro v0.26 releases a brand new Markdown API for your content. This included three major
+						user-facing changes:</p>
+					<ul>
+						<li>You can now <code>import</code>/<code>import()</code> markdown content directly using an ESM
+							import.</li>
+						<li>A new <code>Astro.glob()</code> API, for easier glob imports (especially for Markdown).</li>
+						<li><strong>BREAKING CHANGE:</strong> <code>Astro.fetchContent()</code> has been removed and
+							replaced by <code>Astro.glob()</code></li>
+						<li><strong>BREAKING CHANGE:</strong> Markdown objects have an updated interface.</li>
+					</ul>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #D8DEE9">// v0.25</span></span>
+							<span class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C"> let
+									allPosts = Astro.fetchContent(&#39;./posts/*.md&#39;);</span></span>
+							<span class="line"><span style="color: #D8DEE9">// v0.26+</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> let
+									allPosts = await Astro.glob(&#39;./posts/*.md&#39;);</span></span></code></pre>
+					<p>When migrating, be careful about the new Markdown object interface. Frontmatter, for example, has
+						been moved to the <code>.frontmatter</code> property, so references like <code>post.title</code>
+						should change to <code>post.frontmatter.title</code>.</p>
+					<p>This should solve many issues for Markdown users, including some nice performance boosts for
+						larger sites.</p>
+					<p>Read <a
+							href="https://github.com/withastro/rfcs/blob/main/proposals/0017-markdown-content-redesign.md">RFC0017</a>
+						for more background on these changes.</p>
+					<h3 id="new-default-script-behavior">New Default Script Behavior<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#new-default-script-behavior">¶</a></h3>
+					<p><code>&#x3C;script></code> tags in Astro components are now built, bundled and optimized by
+						default. This completes a long-term move to make our Astro component syntax more consistent,
+						matching the default-optimized behavior our <code>&#x3C;style></code> tags have today.</p>
+					<p>This includes a few changes to be aware of:</p>
+					<ul>
+						<li><strong>BREAKING:</strong> <code>&#x3C;script hoist></code> is the new default
+							<code>&#x3C;script></code> behavior. The <code>hoist</code> attribute has been removed.</li>
+						<li>New <code>&#x3C;script is:inline></code> directive, to revert a <code>&#x3C;script></code>
+							tag to previous default behavior (unbuilt, unbundled, untouched by Astro).</li>
+						<li>New <code>&#x3C;style is:inline></code> directive, to leave a style tag inline in the page
+							template (similar to previous <code>&#x3C;script></code> behavior).</li>
+						<li>New <code>&#x3C;style is:global></code> directive to replace <code>&#x3C;style
+								global></code> in a future release.</li>
+					</ul>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #D8DEE9">// v0.25</span></span>
+							<span class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C">
+									&lt;script hoist&gt;</span></span>
+							<span class="line"><span style="color: #D8DEE9">// v0.26+</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									&lt;script&gt;</span></span></code></pre>
+					<p>Read <a
+							href="https://github.com/withastro/rfcs/blob/main/proposals/0016-style-script-defaults.md">RFC0016</a>
+						for more background on these changes.</p>
+					<h3 id="updated-astrorequest-api">Updated Astro.request API<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#updated-astrorequest-api">¶</a></h3>
+					<p><code>Astro.request</code> has been changed from our custom object to a standard
+						<code>Request</code> object. This is part of a project to use more web standard APIs, especially
+						where SSR is concerned.</p>
+					<p>This includes a few changes to be aware of:</p>
+					<ul>
+						<li>Change <code>Astro.request</code> to become a <a
+								href="https://developer.mozilla.org/en-US/docs/Web/API/Request">Request</a> object.</li>
+						<li>Move <code>Astro.request.params</code> to <code>Astro.params</code>.</li>
+						<li>Move <code>Astro.request.canonicalURL</code> to <code>Astro.canonicalURL</code>.</li>
+					</ul>
+					<p>Read <a
+							href="https://github.com/withastro/rfcs/blob/main/proposals/0018-astro-request.md">RFC0018</a>
+						for more background on these changes.</p>
+					<h3 id="other-changes">Other Changes<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#other-changes">¶</a></h3>
+					<ul>
+						<li>Improve <code>Astro.slots</code> API to support passing arguments to function-based slots.
+							This allows for more ergonomic utility components that accept a callback function as a
+							child.</li>
+						<li>Update CLI output formatting, especially around error reporting.</li>
+						<li>Update <code>@astrojs/compiler</code>, fixing some bugs related to RegExp usage in
+							frontmatter</li>
+					</ul>
+					<h2 id="migrate-to-v025">Migrate to v0.25<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#migrate-to-v025">¶</a></h2>
+					<h3 id="astro-integrations">Astro Integrations<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#astro-integrations">¶</a></h3>
+					<p>The <code>renderers</code> config has been replaced by a new, official integration system! This
+						unlocks some really exciting new features for Astro. You can read our <a
+							href="/en/guides/integrations-guide">Using Integrations</a> guide for more details on how to
+						use this new system.</p>
+					<p>Integrations replace our original <code>renderers</code> concept, and come with a few breaking
+						changes and new defaults for existing users. These changes are covered below.</p>
+					<h4 id="removed-built-in-framework-support">Removed: Built-in Framework Support<a
+							class="heading-fragment-link" title="Permalink to this heading"
+							href="#removed-built-in-framework-support">¶</a></h4>
+					<p>Previously, React, Preact, Svelte, and Vue were all included with Astro by default. Starting in
+						v0.25.0, Astro no longer comes with any built-in renderers. If you did not have a
+						<code>renderers</code> configuration entry already defined for your project, you will now need
+						to install those frameworks yourself.</p>
+					<p>Read our <a href="/en/guides/integrations-guide">step-by-step walkthrough</a> to learn how to add
+						a new Astro integration for the framework(s) that you currently use.</p>
+					<h4 id="deprecated-renderers">Deprecated: Renderers<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#deprecated-renderers">¶</a></h4>
+					<blockquote>
+						<p><em>Read this section if you have custom “renderers” already defined in your configuration
+								file.</em></p>
+					</blockquote>
+					<p>The new integration system replaces the previous <code>renderers</code> system, including the
+						published <code>@astrojs/renderer-*</code> packages on npm. Going forward,
+						<code>@astrojs/renderer-react</code> becomes <code>@astrojs/react</code>,
+						<code>@astrojs/renderer-vue</code> becomes <code>@astrojs/vue</code>, and so on.</p>
+					<p><strong>To migrate:</strong> update Astro to <code>v0.25.0</code> and then run <code>astro
+							dev</code> or <code>astro build</code> with your old configuration file containing the
+						outdated <code>“renderers”</code> config. You will immediately see a notice telling you the
+						exact changes you need to make to your <code>astro.config.mjs</code> file, based on your current
+						config. You can also update your packages yourself, using the table below.</p>
+					<p>For a deeper walkthrough, read our <a href="/en/guides/integrations-guide">step-by-step guide</a>
+						to learn how to replace existing renderers with a new Astro framework integration.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD"># Install your new integrations and
+									frameworks:</span></span>
+							<span class="line"><span style="color: #ABA8BD"># (Read the full walkthrough:
+									https://docs.astro.build/en/guides/integrations-guide)</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> npm
+									install @astrojs/lit lit</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> npm
+									install @astrojs/react react react-dom</span></span></code></pre>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD"># Then, update your `astro.config.mjs`
+									file:</span></span>
+							<span class="line"><span style="color: #ABA8BD"># (Read the full walkthrough:
+									https://docs.astro.build/en/guides/integrations-guide)</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> import
+									lit from &#39;@astrojs/lit&#39;;</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> import
+									react from &#39;@astrojs/react&#39;;</span></span>
+							<span class="line"></span>
+							<span class="line"><span style="color: #D8DEE9">export default {</span></span>
+							<span class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C">
+									renderers: [&#39;@astrojs/renderer-lit&#39;,
+									&#39;@astrojs/renderer-react&#39;],</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									integrations: [lit(), react()],</span></span>
+							<span class="line"><span style="color: #D8DEE9">}</span></span></code></pre>
+					<table>
+						<thead>
+							<tr>
+								<th>Deprecated Renderers on npm</th>
+								<th>v0.25+ Integrations on npm</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>@astrojs/renderer-react</td>
+								<td>@astrojs/react</td>
+							</tr>
+							<tr>
+								<td>@astrojs/renderer-preact</td>
+								<td>@astrojs/preact</td>
+							</tr>
+							<tr>
+								<td>@astrojs/renderer-solid</td>
+								<td>@astrojs/solid-js</td>
+							</tr>
+							<tr>
+								<td>@astrojs/renderer-vue</td>
+								<td>@astrojs/vue</td>
+							</tr>
+							<tr>
+								<td>@astrojs/renderer-svelte</td>
+								<td>@astrojs/svelte</td>
+							</tr>
+						</tbody>
+					</table>
+					<h4 id="handling-peer-dependencies">Handling Peer Dependencies<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#handling-peer-dependencies">¶</a></h4>
+					<blockquote>
+						<p><em>Read this section if: You are on Node v14 <strong>or</strong> if you use any package
+								manager other than npm.</em></p>
+					</blockquote>
+					<p>Unlike the old renderers, integrations no longer mark the frameworks themselves (“react”,
+						“svelte”, “vue”, etc.) as direct dependencies of the integration. Instead, you should now
+						install your framework packages <em>in addition to</em> your integrations.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD"># Example: Install integrations and frameworks
+									together</span></span>
+							<span class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C"> npm
+									install @astrojs/react</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> npm
+									install @astrojs/react react react-dom</span></span></code></pre>
+					<p>If you see a <code>“Cannot find package ‘react’”</code> (or similar) warning when you start up
+						Astro, that means that you need to install that package into your project. See our <a
+							href="/en/guides/integrations-guide#peer-dependencies-warning">note on peer dependencies</a>
+						in the integrations guide for more information.</p>
+					<p>If you are using <code>npm</code> &#x26; Node v16+, then this may be automatically handled for
+						you by <code>npm</code>, since the latest version of <code>npm</code> (v7+) installs peer
+						dependencies like this for you automatically. In that case, installing a framework like “react”
+						into your project is an optional but still recommend step.</p>
+					<h3 id="updated-syntax-highlighting">Updated: Syntax Highlighting<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#updated-syntax-highlighting">¶</a></h3>
+					<p>We love to find sensible defaults that “just work” out-of-the-box. As part of this, we decided to
+						make <a href="https://github.com/shikijs/shiki">Shiki</a> our new default syntax highlighter.
+						This comes pre-configured with the <code>github-dark</code> theme, providing zero-config
+						highlighting in your code blocks without extraneous CSS classes, stylesheets, or client-side JS.
+					</p>
+					<p>Check our new <a href="/en/guides/markdown-content/#syntax-highlighting">syntax highlighting
+							docs</a> for full details. <strong>If you prefer to keep Prism as your syntax
+							highlighter,</strong> <a href="/en/guides/markdown-content/#prism-configuration">set the
+							<code>syntaxHighlight</code> option to <code>‘prism’</code></a> in your project’s markdown
+						configuration.</p>
+					<h4 id="the-prism--component-has-a-new-home">The <code>&#x3C;Prism /></code> component has a new
+						home<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#the-prism--component-has-a-new-home">¶</a></h4>
+					<p>As part of our mission to keep Astro core as lean as possible, we’ve moved the built-in
+						<code>Prism</code> component out of <code>astro/components</code> and into the
+						<code>@astrojs/prism</code> package. You can now import this component from
+						<code>@astrojs/prism</code> like so:</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD">---</span></span>
+							<span class="line"><span style="color: #FF657C; font-style: italic">import</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span><span
+									style="color: #D8DEE9"> Prism </span><span style="color: #C7C5D3">}</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #FF657C; font-style: italic">from</span><span style="color: #D8DEE9">
+								</span><span style="color: #16C082">&#39;@astrojs/prism&#39;</span><span
+									style="color: #C7C5D3">;</span></span>
+							<span class="line"><span style="color: #ABA8BD">---</span></span></code></pre>
+					<p>Since the <code>@astrojs/prism</code> package is still bundled with <code>astro</code> core, you
+						won’t need to install anything new, nor add Prism as an integration! However, note that we
+						<em>do</em> plan to extract <code>@astrojs/prism</code> (and Prism syntax highlighting in
+						general) to a separate, installable package in the future. See <a
+							href="/en/reference/api-reference#prism-">the <code>&#x3C;Prism /></code> component API
+							reference</a> for more.</p>
+					<h3 id="css-parser-upgrade">CSS Parser Upgrade<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#css-parser-upgrade">¶</a></h3>
+					<p>Our internal CSS parser has been updated, and comes with better support for advanced CSS syntax,
+						like container queries. This should be a mostly invisible change for most users, but hopefully
+						for advanced users will enjoy the new CSS feature support.</p>
+					<h2 id="migrate-to-v024">Migrate to v0.24<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#migrate-to-v024">¶</a></h2>
+					<blockquote>
+						<p>The new build strategy is on by default on 0.24. If you run into a problem you can continue
+							using the old build stategy by passing the <code>—legacy-build</code> flag. Please <a
+								href="https://github.com/withastro/astro/issues/new/choose">open an issue</a> so that we
+							can resolve problems with the new build strategy.</p>
+					</blockquote>
+					<p>0.24 introduced a new <em>static build</em> strategy that changes the behavior of a few features.
+						In previous versions of Astro this was available behavior an opt-in flag:
+						<code>—experimental-static-build</code>.</p>
+					<p>To migrate for the transition, be aware of the following changes that will be required to move to
+						this new build engine. You can make these changes to your codebase at any time so that you are
+						ready ahead of schedule.</p>
+					<h3 id="deprecated-astroresolve">Deprecated: Astro.resolve()<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#deprecated-astroresolve">¶</a></h3>
+					<p><code>Astro.resolve()</code> allows you to get resolved URLs to assets that you might want to
+						reference in the browser. This was most commonly used inside of <code>&#x3C;link></code> and
+						<code>&#x3C;img></code> tags to load CSS files and images as needed. Unfortunately, this will no
+						longer work due to Astro now building assets at <em>build time</em> rather than at <em>render
+							time</em>. You’ll want to upgrade your asset references to one of the following future-proof
+						options available going forward:</p>
+					<h4 id="how-to-resolve-css-files">How to Resolve CSS Files<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#how-to-resolve-css-files">¶</a></h4>
+					<p><strong>1. ESM Import (Recommended)</strong></p>
+					<p><strong>Example:</strong> <code>import ‘./style.css’;</code><br>
+						<strong>When to use this:</strong> If your CSS file lives inside of the <code>src/</code>
+						directory, and you want automatic CSS build and optimization features.
+					</p>
+					<p>Use an ESM import to add some CSS onto the page. Astro detects these CSS imports and then builds,
+						optimizes, and adds the CSS to the page automatically. This is the easiest way to migrate from
+						<code>Astro.resolve()</code> while keeping the automatic building/bundling that Astro provides.
+					</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD">---</span></span>
+							<span class="line"><span style="color: #ABA8BD">// Example: Astro will include and optimize
+									this CSS for you automatically</span></span>
+							<span class="line"><span style="color: #FF657C; font-style: italic">import</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #16C082">&#39;./style.css&#39;</span><span
+									style="color: #C7C5D3">;</span></span>
+							<span class="line"><span style="color: #ABA8BD">---</span></span>
+							<span class="line"><span style="color: #C7C5D3">&lt;</span><span
+									style="color: #FF657C">html</span><span style="color: #C7C5D3">&gt;</span><span
+									style="color: #ABA8BD">&lt;!-- Your page here --&gt;</span><span
+									style="color: #C7C5D3">&lt;/</span><span style="color: #FF657C">html</span><span
+									style="color: #C7C5D3">&gt;</span></span></code></pre>
+					<p>Importing CSS files should work anywhere that ESM imports are supported, including:</p>
+					<ul>
+						<li>JavaScript files</li>
+						<li>TypeScript files</li>
+						<li>Astro component front matter</li>
+						<li>non-Astro components like React, Svelte, and others</li>
+					</ul>
+					<p>When a CSS file is imported using this method, any <code>@import</code> statements are also
+						resolved and inlined into the imported CSS file. All <code>url()</code> references are also
+						resolved relative to the source file, and any <code>url()</code> referenced assets will be
+						included in the final build.</p>
+					<p><strong>2. Absolute URL Path</strong></p>
+					<p><strong>Example:</strong> <code>&#x3C;link href=“/style.css”></code><br>
+						<strong>When to use this:</strong> If your CSS file lives inside of <code>public/</code>, and
+						you prefer to create your HTML <code>link</code> element yourself.
+					</p>
+					<p>You can references any file inside of the <code>public/</code> directory by absolute URL path in
+						your component template. This is a good option if you want to control the
+						<code>&#x3C;link></code> tag on the page yourself. However, this approach also skips the CSS
+						processing, bundling and optimizations that are provided by Astro when you use the
+						<code>import</code> method described above.</p>
+					<p>We recommend using the <code>import</code> approach over the abolute URL approach, since it
+						provides the best possible CSS performance and features by default.</p>
+					<h4 id="how-to-resolve-javascript-files">How to Resolve JavaScript Files<a
+							class="heading-fragment-link" title="Permalink to this heading"
+							href="#how-to-resolve-javascript-files">¶</a></h4>
+					<p><strong>1. Absolute URL Path</strong></p>
+					<p><strong>Example:</strong> <code>&#x3C;script src=“/some-external-script.js” /></code><br>
+						<strong>When to use this:</strong> If your JavaScript file lives inside of <code>public/</code>.
+					</p>
+					<p>You can references any file inside of the <code>public/</code> directory by absolute URL path in
+						your Astro component templates. This is a good default option for external scripts, because it
+						lets you control the <code>&#x3C;script ></code> tag on the page yourself.</p>
+					<p>Note that this approach skips the JavaScript processing, bundling and optimizations that are
+						provided by Astro when you use the <code>import</code> method described below. However, this may
+						be preferred for any external scripts that have already been published and minified seperately
+						from Astro. If your script was downloaded from an external source, then this method is probably
+						preferred.</p>
+					<p><strong>2. ESM Import via <code>&#x3C;script hoist></code></strong></p>
+					<p><strong>Example:</strong> <code>&#x3C;script hoist>import
+							‘./some-external-script.js’;&#x3C;/script></code><br>
+						<strong>When to use this:</strong> If your external script lives inside of <code>src/</code>
+						<em>and</em> it supports the ESM module type.
+					</p>
+					<p>Use an ESM import inside of a <code>&#x3C;script hoist></code> element in your Astro template,
+						and Astro will include the JavaScript file in your final build. Astro detects these JavaScript
+						client-side imports and then builds, optimizes, and adds the JavaScript to the page
+						automatically. This is the easiest way to migrate from <code>Astro.resolve()</code> while
+						keeping the automatic building/bundling that Astro provides.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">&lt;</span><span
+									style="color: #FF657C">script</span><span style="color: #D8DEE9"> </span><span
+									style="color: #FFBD2E">hoist</span><span style="color: #C7C5D3">&gt;</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #FF657C; font-style: italic">import</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #16C082">&#39;./some-external-script.js&#39;</span><span
+									style="color: #C7C5D3">;</span></span>
+							<span class="line"><span style="color: #C7C5D3">&lt;/</span><span
+									style="color: #FF657C">script</span><span
+									style="color: #C7C5D3">&gt;</span></span></code></pre>
+					<p>Note that Astro will bundle this external script with the rest of your client-side JavaScript,
+						and load it in the <code>type=“module”</code> script context. Some older JavaScript files may
+						not be written for the <code>module</code> context, in which case they may need to be updated to
+						use this method.</p>
+					<h4 id="how-to-resolve-images--other-assets">How to Resolve Images &#x26; Other Assets<a
+							class="heading-fragment-link" title="Permalink to this heading"
+							href="#how-to-resolve-images--other-assets">¶</a></h4>
+					<p><strong>1. Absolute URL Path (Recommended)</strong></p>
+					<p><strong>Example:</strong> <code>&#x3C;img src=“/penguin.png”></code>
+						<strong>When to use this:</strong> If your asset lives inside of <code>public/</code>.
+					</p>
+					<p>If you place your images inside of <code>public/</code> you can safely reference them by absolute
+						URL path directly in your component templates. This is the simplest way to reference an asset
+						that you can use today, and it is recommended for most users who are getting started with Astro.
+					</p>
+					<p><strong>2. ESM Import</strong></p>
+					<p><strong>Example:</strong> <code>import imgUrl from ‘./penguin.png’</code>
+						<strong>When to use this:</strong> If your asset lives inside of the <code>src/</code>
+						directory, and you want automatic optimization features like filename hashing.
+					</p>
+					<p>This works inside of any JavaScript or Astro component, and returns a resolved URL to the final
+						image. Once you have the resolved URL, you can use it anywhere inside of the component template.
+					</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD">---</span></span>
+							<span class="line"><span style="color: #ABA8BD">// Example: Astro will include this image
+									file in your final build</span></span>
+							<span class="line"><span style="color: #FF657C; font-style: italic">import</span><span
+									style="color: #D8DEE9"> imgUrl </span><span
+									style="color: #FF657C; font-style: italic">from</span><span style="color: #D8DEE9">
+								</span><span style="color: #16C082">&#39;./penguin.png&#39;</span><span
+									style="color: #C7C5D3">;</span></span>
+							<span class="line"><span style="color: #ABA8BD">---</span></span>
+							<span class="line"><span style="color: #C7C5D3">&lt;</span><span
+									style="color: #FF657C">img</span><span style="color: #D8DEE9"> </span><span
+									style="color: #FFBD2E">src</span><span style="color: #C7C5D3">={</span><span
+									style="color: #D8DEE9">imgUrl</span><span style="color: #C7C5D3">}</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">/&gt;</span></span></code></pre>
+					<p>Similar to how Astro handles CSS, the ESM import allows Astro to perform some simple build
+						optimizations for you automatically. For example, any asset inside of <code>src/</code> that is
+						imported using an ESM import (ex: <code>import imgUrl from ‘./penguin.png’</code>) will have its
+						filename hashed automatically. This can let you cache the file more aggressively on the server,
+						improving user performance. In the future, Astro may add more optimizations like this.</p>
+					<p><strong>Tip:</strong> If you dislike static ESM imports, Astro also supports dynamic ESM imports.
+						We only recommend this option if you prefer this syntax: <code>&#x3C;img src={(await
+							import(‘./penguin.png’)).default} /></code>.</p>
+					<h3 id="deprecated-script-default-processing">Deprecated: <code>&#x3C;script></code> Default
+						Processing<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#deprecated-script-default-processing">¶</a></h3>
+					<p>Previously, all <code>&#x3C;script></code> elements were read from the final HTML output and
+						processed + bundled automatically. This behavior is no longer the default. Starting in 0.24, you
+						must opt-in to <code>&#x3C;script></code> element processing via the <code>hoist</code>
+						attribute. The <code>type=“module”</code> is also required for hoisted modules.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">&lt;</span><span
+									style="color: #FF657C">script</span><span style="color: #C7C5D3">&gt;</span></span>
+							<span class="line"><span style="color: #C7C5D3"> </span><span style="color: #ABA8BD">// Will
+									be rendered into the HTML exactly as written!</span></span>
+							<span class="line"><span style="color: #C7C5D3"> </span><span style="color: #ABA8BD">// ESM
+									imports will not be resolved relative to the file.</span></span>
+							<span class="line"><span style="color: #C7C5D3">&lt;/</span><span
+									style="color: #FF657C">script</span><span style="color: #C7C5D3">&gt;</span></span>
+							<span class="line"><span style="color: #C7C5D3">&lt;</span><span
+									style="color: #FF657C">script</span><span style="color: #D8DEE9"> </span><span
+									style="color: #FFBD2E">type</span><span style="color: #C7C5D3">=</span><span
+									style="color: #16C082">&quot;module&quot;</span><span style="color: #D8DEE9">
+								</span><span style="color: #FFBD2E">hoist</span><span
+									style="color: #C7C5D3">&gt;</span></span>
+							<span class="line"><span style="color: #C7C5D3"> </span><span style="color: #ABA8BD">//
+									Processed! Bundled! ESM imports work, even to npm packages.</span></span>
+							<span class="line"><span style="color: #C7C5D3">&lt;/</span><span
+									style="color: #FF657C">script</span><span
+									style="color: #C7C5D3">&gt;</span></span></code></pre>
+					<h2 id="migrate-to-v023">Migrate to v0.23<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#migrate-to-v023">¶</a></h2>
+					<h3 id="missing-sass-error">Missing Sass Error<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#missing-sass-error">¶</a></h3>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #d8dee9">Preprocessor dependency &quot;sass&quot; not
+									found. Did you install it?</span></span></code></pre>
+					<p>In our quest to reduce npm install size, we’ve moved <a href="https://sass-lang.com/">Sass</a>
+						out to an optional dependency. If you use Sass in your project, you’ll want to make sure that
+						you run <code>npm install sass —save-dev</code> to save it as a dependency.</p>
+					<h3 id="deprecated-unescaped-html">Deprecated: Unescaped HTML<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#deprecated-unescaped-html">¶</a></h3>
+					<p>In Astro v0.23+, unescaped HTML content in expressions is now deprecated.
+						In future releases, content within expressions will have strings escaped to protect against
+						unintended HTML injection.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C">
+									&lt;h1&gt;{title}&lt;/h1&gt; &lt;!-- &lt;h1&gt;Hello
+									&lt;strong&gt;World&lt;/strong&gt;&lt;/h1&gt; --&gt;</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									&lt;h1&gt;{title}&lt;/h1&gt; &lt;!-- &lt;h1&gt;Hello
+									&amp;lt;strong&amp;gt;World&amp;lt;/strong&amp;gt;&lt;/h1&gt;
+									--&gt;</span></span></code></pre>
+					<p>To continue injecting unescaped HTML, you can now use <code>set:html</code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C">
+									&lt;h1&gt;{title}&lt;/h1&gt;</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> &lt;h1
+									set:html={title} /&gt;</span></span></code></pre>
+					<p>To avoid a wrapper element, <code>set:html</code> can work alongside
+						<code>&#x3C;Fragment></code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C">
+									&lt;h1&gt;{title}!&lt;/h1&gt;</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									&lt;h1&gt;&lt;Fragment set:html={title}&gt;!&lt;/h1&gt;</span></span></code></pre>
+					<p>You can also protect against unintended HTML injection with <code>set:text</code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">&lt;</span><span
+									style="color: #FF657C">h1</span><span style="color: #D8DEE9"> </span><span
+									style="color: #FFBD2E">set:text</span><span style="color: #C7C5D3">={</span><span
+									style="color: #D8DEE9">title</span><span style="color: #C7C5D3">}</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">/&gt;</span><span
+									style="color: #D8DEE9"> </span><span style="color: #ABA8BD">&lt;!-- &lt;h1&gt;Hello
+									&amp;lt;strong&amp;gt;World&amp;lt;/strong&amp;gt;&lt;/h1&gt;
+									--&gt;</span></span></code></pre>
+					<h2 id="migrate-to-v021">Migrate to v0.21<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#migrate-to-v021">¶</a></h2>
+					<h3 id="vite">Vite<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#vite">¶</a></h3>
+					<p>Starting in v0.21, Astro is built with <a href="https://vitejs.dev">Vite</a>.
+						As a result, configurations written in <code>snowpack.config.mjs</code> should be moved into
+						<code>astro.config.mjs</code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD">// @ts-check</span></span>
+							<span class="line"></span>
+							<span class="line"><span style="color: #ABA8BD">/** </span><span
+									style="color: #C7C5D3">@</span><span style="color: #FFBD2E">type</span><span
+									style="color: #ABA8BD"> </span><span style="color: #C7C5D3">{</span><span
+									style="color: #ABA8BD">import(&#39;astro&#39;).AstroUserConfig</span><span
+									style="color: #C7C5D3">}</span><span style="color: #ABA8BD"> */</span></span>
+							<span class="line"><span style="color: #FF657C; font-style: italic">export</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #FF657C; font-style: italic">default</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #66ADFF">renderers</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> []</span><span style="color: #C7C5D3">,</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #66ADFF">vite</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #66ADFF">plugins</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> []</span><span style="color: #C7C5D3">,</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">},</span></span>
+							<span class="line"><span style="color: #C7C5D3">};</span></span></code></pre>
+					<p>To learn more about configuring Vite, please visit their <a
+							href="https://vitejs.dev/config/">configuration guide</a>.</p>
+					<h4 id="vite-plugins">Vite Plugins<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#vite-plugins">¶</a></h4>
+					<p>In Astro v0.21+, Vite plugins may be configured within <code>astro.config.mjs</code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #FF657C; font-style: italic">import</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span><span
+									style="color: #D8DEE9"> </span><span style="color: #FFBD2E">imagetools</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">}</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #FF657C; font-style: italic">from</span><span style="color: #D8DEE9">
+								</span><span style="color: #16C082">&#39;vite-imagetools&#39;</span><span
+									style="color: #C7C5D3">;</span></span>
+							<span class="line"></span>
+							<span class="line"><span style="color: #FF657C; font-style: italic">export</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #FF657C; font-style: italic">default</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #66ADFF">vite</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #66ADFF">plugins</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> [</span><span style="color: #66ADFF">imagetools</span><span
+									style="color: #D8DEE9">()]</span><span style="color: #C7C5D3">,</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">},</span></span>
+							<span class="line"><span style="color: #C7C5D3">};</span></span></code></pre>
+					<p>To learn more about Vite plugins, please visit their <a
+							href="https://vitejs.dev/guide/using-plugins.html">plugin guide</a>.</p>
+					<h4 id="vite-changes-to-renderers">Vite Changes to Renderers<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#vite-changes-to-renderers">¶</a></h4>
+					<p>In Astro v0.21+, plugins should now use <code>viteConfig()</code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #D8DEE9">// renderer-svelte/index.js</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> import
+									{ svelte } from &#39;@sveltejs/vite-plugin-svelte&#39;;</span></span>
+							<span class="line"></span>
+							<span class="line"><span style="color: #D8DEE9">export default </span></span>
+							<span class="line"><span style="color: #D8DEE9"> name:
+									&#39;@astrojs/renderer-svelte&#39;,</span></span>
+							<span class="line"><span style="color: #D8DEE9"> client:
+									&#39;./client.js&#39;,</span></span>
+							<span class="line"><span style="color: #D8DEE9"> server:
+									&#39;./server.js&#39;,</span></span>
+							<span class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C">
+									snowpackPlugin: &#39;@snowpack/plugin-svelte&#39;,</span></span>
+							<span class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C">
+									snowpackPluginOptions: { compilerOptions: { hydratable: true } },</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									viteConfig() {</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> return
+									{</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									optimizeDeps: {</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									include: [&#39;@astrojs/renderer-svelte/client.js&#39;, &#39;svelte&#39;,
+									&#39;svelte/internal&#39;],</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									exclude: [&#39;@astrojs/renderer-svelte/server.js&#39;],</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									},</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									plugins: [</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									svelte({</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									emitCss: true,</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									compilerOptions: { hydratable: true },</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									}),</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									],</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									};</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									},</span></span>
+							<span class="line"><span style="color: #D8DEE9">}</span></span></code></pre>
+					<p>To learn more about Vite plugins, please visit their <a
+							href="https://vitejs.dev/guide/using-plugins.html">plugin guide</a>.</p>
+					<blockquote>
+						<p>In prior releases, these were configured with <code>snowpackPlugin</code> or
+							<code>snowpackPluginOptions</code>.</p>
+					</blockquote>
+					<h3 id="aliasing">Aliasing<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#aliasing">¶</a></h3>
+					<p>In Astro v0.21+, import aliases can be added from <code>tsconfig.json</code> or
+						<code>jsconfig.json</code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">{</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">&quot;</span><span
+									style="color: #FFBD2E">compilerOptions</span><span
+									style="color: #C7C5D3">&quot;</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">&quot;</span><span style="color: #FFBD2E">baseUrl</span><span
+									style="color: #C7C5D3">&quot;</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> </span><span
+									style="color: #16C082">&quot;.&quot;</span><span
+									style="color: #C7C5D3">,</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">&quot;</span><span style="color: #FFBD2E">paths</span><span
+									style="color: #C7C5D3">&quot;</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">&quot;</span><span
+									style="color: #FFBD2E">@/components/*</span><span
+									style="color: #C7C5D3">&quot;</span><span style="color: #C7C5D3">:</span><span
+									style="color: #D8DEE9"> </span><span style="color: #C7C5D3">[</span><span
+									style="color: #16C082">&quot;src/components/*&quot;</span><span
+									style="color: #C7C5D3">]</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">}</span></span>
+							<span class="line"><span style="color: #D8DEE9"> </span><span
+									style="color: #C7C5D3">}</span></span>
+							<span class="line"><span style="color: #C7C5D3">}</span></span></code></pre>
+					<p><em>These aliases are integrated automatically into <a
+								href="https://code.visualstudio.com/docs/languages/jsconfig">VSCode</a> and other
+							editors.</em></p>
+					<h3 id="file-extensions-in-imports">File Extensions in Imports<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#file-extensions-in-imports">¶</a></h3>
+					<p>In Astro v0.21+, files need to be referenced by their actual extension, exactly as it is on disk.
+						In this example, <code>Div.tsx</code> would need to be referenced as <code>Div.tsx</code>, not
+						<code>Div.jsx</code>.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C"> import
+									Div from &#39;./Div.jsx&#39; // Astro v0.20</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082"> import
+									Div from &#39;./Div.tsx&#39; // Astro v0.21</span></span></code></pre>
+					<p>This same change applies to a compile-to-css file like <code>Div.scss</code>:</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #C7C5D3">-</span><span style="color: #FF657C"> &lt;link
+									rel=&quot;stylesheet&quot;
+									href={Astro.resolve(&#39;./Div.css&#39;)}&gt;</span></span>
+							<span class="line"><span style="color: #C7C5D3">+</span><span style="color: #16C082">
+									&lt;link rel=&quot;stylesheet&quot;
+									href={Astro.resolve(&#39;./Div.scss&#39;)}&gt;</span></span></code></pre>
+					<h3 id="removed-components-in-frontmatter">Removed: Components in Frontmatter<a
+							class="heading-fragment-link" title="Permalink to this heading"
+							href="#removed-components-in-frontmatter">¶</a></h3>
+					<p>Previously, you could create mini Astro Components inside of the Astro Frontmatter, using JSX
+						syntax instead of Astro’s component syntax. This was always a bit of a hack, but in the new
+						compiler it became impossible to support. We hope to re-introduce this feature in a future
+						release of Astro using a different, non-JSX API.</p>
+					<p>To migrate to v0.21+, please convert all JSX Astro components (that is, any Astro components
+						created inside of another component’s frontmatter) to standalone components.</p>
+					<h3 id="styling-changes">Styling Changes<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#styling-changes">¶</a></h3>
+					<h4 id="autoprefixer">Autoprefixer<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#autoprefixer">¶</a></h4>
+					<p>Autoprefixer is no longer run by default. To enable:</p>
+					<ol>
+						<li>Install the latest version (<code>npm i autoprefixer</code>)</li>
+						<li>Create a <code>postcss.config.cjs</code> file at the root of your project with:
+							<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+										class="line"><span style="color: #FFBD2E">module</span><span
+											style="color: #C7C5D3">.</span><span
+											style="color: #FFBD2E">exports</span><span style="color: #D8DEE9">
+										</span><span style="color: #FF657C; font-style: italic">=</span><span
+											style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+									<span class="line"><span style="color: #D8DEE9"> </span><span
+											style="color: #66ADFF">plugins</span><span
+											style="color: #C7C5D3">:</span><span style="color: #D8DEE9"> </span><span
+											style="color: #C7C5D3">{</span></span>
+									<span class="line"><span style="color: #D8DEE9"> </span><span
+											style="color: #66ADFF">autoprefixer</span><span
+											style="color: #C7C5D3">:</span><span style="color: #D8DEE9"> </span><span
+											style="color: #C7C5D3">{},</span></span>
+									<span class="line"><span style="color: #D8DEE9"> </span><span
+											style="color: #C7C5D3">},</span></span>
+									<span class="line"><span style="color: #C7C5D3">};</span></span></code></pre>
+						</li>
+					</ol>
+					<h4 id="tailwind-css">Tailwind CSS<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#tailwind-css">¶</a></h4>
+					<p>Ensure you have PostCSS installed. This was optional in previous releases, but is required now:
+					</p>
+					<ol>
+						<li>Install the latest version of postcss (<code>npm i -D postcss</code>)</li>
+						<li>Create a <code>postcss.config.cjs</code> file at the root of your project with:
+							<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+										class="line"><span style="color: #FFBD2E">module</span><span
+											style="color: #C7C5D3">.</span><span
+											style="color: #FFBD2E">exports</span><span style="color: #D8DEE9">
+										</span><span style="color: #FF657C; font-style: italic">=</span><span
+											style="color: #D8DEE9"> </span><span style="color: #C7C5D3">{</span></span>
+									<span class="line"><span style="color: #D8DEE9"> </span><span
+											style="color: #66ADFF">plugins</span><span
+											style="color: #C7C5D3">:</span><span style="color: #D8DEE9"> </span><span
+											style="color: #C7C5D3">{</span></span>
+									<span class="line"><span style="color: #D8DEE9"> </span><span
+											style="color: #66ADFF">tailwindcss</span><span
+											style="color: #C7C5D3">:</span><span style="color: #D8DEE9"> </span><span
+											style="color: #C7C5D3">{},</span></span>
+									<span class="line"><span style="color: #D8DEE9"> </span><span
+											style="color: #C7C5D3">},</span></span>
+									<span class="line"><span style="color: #C7C5D3">};</span></span></code></pre>
+							For more information, read the <a
+								href="https://tailwindcss.com/docs/installation#add-tailwind-as-a-post-css-plugin">Tailwind
+								CSS documentation</a>
+						</li>
+					</ol>
+					<h3 id="known-issues">Known Issues<a class="heading-fragment-link" title="Permalink to this heading"
+							href="#known-issues">¶</a></h3>
+					<h4 id="imports-on-top">Imports on top<a class="heading-fragment-link"
+							title="Permalink to this heading" href="#imports-on-top">¶</a></h4>
+					<p>In Astro v0.21+, a bug has been introduced that requires imports inside components to be at the
+						top of your front matter.</p>
+					<pre class="astro-code" style="background-color: #312749; overflow-x: auto;"><code><span
+								class="line"><span style="color: #ABA8BD">---</span></span>
+							<span class="line"><span style="color: #FF657C; font-style: italic">import</span><span
+									style="color: #D8DEE9"> Component </span><span
+									style="color: #FF657C; font-style: italic">from</span><span style="color: #D8DEE9">
+								</span><span
+									style="color: #16C082">&#39;../components/Component.astro&#39;</span></span>
+							<span class="line"><span style="color: #FF657C">const</span><span style="color: #D8DEE9">
+									whereShouldIPutMyImports </span><span
+									style="color: #FF657C; font-style: italic">=</span><span style="color: #D8DEE9">
+								</span><span style="color: #16C082">&quot;on top!&quot;</span></span>
+							<span class="line"><span style="color: #ABA8BD">---</span></span></code></pre>
+				</section>
+				<aside class="next-previous-nav astro-F2L4ZIRO">
+					<a class="ltr astro-23AMCTIO" rel="prev" href="/en/editor-setup">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="32" width="32"
+							fill="currentColor" class="astro-23AMCTIO">
+							<path
+								d="M447.1 256C447.1 273.7 433.7 288 416 288H109.3l105.4 105.4c12.5 12.5 12.5 32.75 0 45.25C208.4 444.9 200.2 448 192 448s-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L109.3 224H416C433.7 224 447.1 238.3 447.1 256z"
+								class="astro-23AMCTIO"></path>
+						</svg>
+
+						<div class="copy astro-23AMCTIO">
+							<div class="heading astro-23AMCTIO">Back
+							</div>
+							<div class="name astro-23AMCTIO">Editor Setup</div>
+						</div>
+					</a>
+
+
+
+					<a class="rtl astro-23AMCTIO" rel="prev" href="/en/integrations/integrations">
+
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" height="32" width="32"
+							fill="currentColor" class="astro-23AMCTIO">
+							<path
+								d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"
+								class="astro-23AMCTIO"></path>
+						</svg>
+						<div class="copy astro-23AMCTIO">
+							<div class="heading astro-23AMCTIO">Next Page
+							</div>
+							<div class="name astro-23AMCTIO">Built with Astro</div>
+						</div>
+					</a>
+
+
+
+				</aside>
+			</article>
+
+
+
+		</div>
+		<aside id="grid-right" class="grid-sidebar astro-3P2XRIHJ" title="Table of Contents">
+			<nav class="sidebar-nav astro-QUEQLUEF" aria-labelledby="grid-right">
+				<div class="sidebar-nav-inner astro-QUEQLUEF">
+					<astro-root uid="1Bu7BL">
+						<h2 class="heading">On this page</h2>
+						<ul>
+							<li class="header-link depth-2"><a href="#overview">Overview</a></li>
+							<li class="header-link depth-2"><a href="#migrate-to-v026">Migrate to v0.26</a></li>
+							<li class="header-link depth-3"><a href="#new-configuration-api">New Configuration API</a>
+							</li>
+							<li class="header-link depth-3"><a href="#new-markdown-api">New Markdown API</a></li>
+							<li class="header-link depth-3"><a href="#new-default-script-behavior">New Default Script
+									Behavior</a></li>
+							<li class="header-link depth-3"><a href="#updated-astrorequest-api">Updated Astro.request
+									API</a></li>
+							<li class="header-link depth-3"><a href="#other-changes">Other Changes</a></li>
+							<li class="header-link depth-2"><a href="#migrate-to-v025">Migrate to v0.25</a></li>
+							<li class="header-link depth-3"><a href="#astro-integrations">Astro Integrations</a></li>
+							<li class="header-link depth-3"><a href="#updated-syntax-highlighting">Updated: Syntax
+									Highlighting</a></li>
+							<li class="header-link depth-3"><a href="#css-parser-upgrade">CSS Parser Upgrade</a></li>
+							<li class="header-link depth-2"><a href="#migrate-to-v024">Migrate to v0.24</a></li>
+							<li class="header-link depth-3"><a href="#deprecated-astroresolve">Deprecated:
+									Astro.resolve()</a></li>
+							<li class="header-link depth-3"><a href="#deprecated-script-default-processing">Deprecated:
+									&lt;script&gt; Default Processing</a></li>
+							<li class="header-link depth-2"><a href="#migrate-to-v023">Migrate to v0.23</a></li>
+							<li class="header-link depth-3"><a href="#missing-sass-error">Missing Sass Error</a></li>
+							<li class="header-link depth-3"><a href="#deprecated-unescaped-html">Deprecated: Unescaped
+									HTML</a></li>
+							<li class="header-link depth-2"><a href="#migrate-to-v021">Migrate to v0.21</a></li>
+							<li class="header-link depth-3"><a href="#vite">Vite</a></li>
+							<li class="header-link depth-3"><a href="#aliasing">Aliasing</a></li>
+							<li class="header-link depth-3"><a href="#file-extensions-in-imports">File Extensions in
+									Imports</a></li>
+							<li class="header-link depth-3"><a href="#removed-components-in-frontmatter">Removed:
+									Components in Frontmatter</a></li>
+							<li class="header-link depth-3"><a href="#styling-changes">Styling Changes</a></li>
+							<li class="header-link depth-3"><a href="#known-issues">Known Issues</a></li>
+						</ul>
+					</astro-root>
+					<h2 class="heading astro-JGYQTN6E">More
+					</h2>
+					<ul class="astro-JGYQTN6E">
+						<li class="header-link depth-2 astro-JGYQTN6E">
+							<a class="edit-on-github astro-JGYQTN6E"
+								href="https://github.com/withastro/docs/blob/main/src/pages/en/migrate.md"
+								target="_blank">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="pen"
+									class="svg-inline--fa fa-pen fa-w-16 astro-JGYQTN6E" role="img"
+									xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" width="1em">
+									<path fill="currentColor"
+										d="M290.74 93.24l128.02 128.02-277.99 277.99-114.14 12.6C11.35 513.54-1.56 500.62.14 485.34l12.7-114.22 277.9-277.88zm207.2-19.06l-60.11-60.11c-18.75-18.75-49.16-18.75-67.91 0l-56.55 56.55 128.02 128.02 56.55-56.55c18.75-18.76 18.75-49.16 0-67.91z"
+										class="astro-JGYQTN6E"></path>
+								</svg>
+								<span class="astro-JGYQTN6E">Edit this page
+								</span>
+							</a>
+						</li>
+						<li class="header-link depth-2 astro-JGYQTN6E">
+							<a href="https://github.com/withastro/astro/blob/main/CONTRIBUTING.md#translations"
+								target="_blank" class="astro-JGYQTN6E">
+								<svg aria-hidden="true" focusable="false" role="img" xmlns="http://www.w3.org/2000/svg"
+									viewBox="0 0 88.6 77.3" height="1.24em" width="1.24em" style="margin: -2px;"
+									class="astro-JGYQTN6E">
+									<path fill="currentColor"
+										d="M61,24.6h7.9l18.7,51.6h-7.7l-5.4-15.5H54.3l-5.6,15.5h-7.2L61,24.6z M72.6,55l-8-22.8L56.3,55H72.6z"
+										class="astro-JGYQTN6E"></path>
+									<path fill="currentColor"
+										d="M53.6,60.6c-10-4-16-9-22-14c0,0,1.3,1.3,0,0c-6,5-20,13-20,13l-4-6c8-5,10-6,19-13c-2.1-1.9-12-13-13-19h8          c4,9,10,14,10,14c10-8,10-19,10-19h8c0,0-1,13-12,24l0,0c5,5,10,9,19,13L53.6,60.6z M1.6,16.6h56v-8h-23v-7h-9v7h-24V16.6z"
+										class="astro-JGYQTN6E"></path>
+								</svg>
+								<span class="astro-JGYQTN6E">Translate this page
+								</span>
+							</a>
+						</li>
+						<li class="header-link depth-2 astro-JGYQTN6E">
+							<a href="https://astro.build/chat" target="_blank" class="astro-JGYQTN6E">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="comment-alt"
+									class="svg-inline--fa fa-comment-alt fa-w-16 astro-JGYQTN6E" role="img"
+									xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="1em" width="1em">
+									<path fill="currentColor"
+										d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"
+										class="astro-JGYQTN6E"></path>
+								</svg>
+								<span class="astro-JGYQTN6E">Join our community
+								</span>
+							</a>
+						</li>
+						<li class="header-link depth-2 astro-JGYQTN6E">
+							<a href="https://github.com/withastro/docs" target="_blank" class="astro-JGYQTN6E">
+								<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="github"
+									class="svg-inline--fa fa-brands fa-github fa-w-16 astro-JGYQTN6E" role="img"
+									xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" height="1em" width="1em"
+									xmlns="http://www.w3.org/2000/svg">
+									<path fill="currentColor"
+										d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"
+										class="astro-JGYQTN6E"></path>
+								</svg>
+								<span class="astro-JGYQTN6E">GitHub</span>
+							</a>
+						</li>
+					</ul>
+
+
+
+					<div style="margin: 2rem 0; text-align: center;" class="astro-QUEQLUEF">
+						<astro-root uid="Z29erab">
+							<div class="theme-toggle"><label class><svg xmlns="http://www.w3.org/2000/svg" width="20"
+										height="20" viewBox="0 0 20 20" fill="currentColor">
+										<path fill-rule="evenodd"
+											d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+											clip-rule="evenodd"></path>
+									</svg><input type="radio" name="theme-toggle" value="light" title="Use light theme"
+										aria-label="Use light theme" /></label><label class><svg
+										xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+										fill="currentColor">
+										<path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z">
+										</path>
+									</svg><input type="radio" name="theme-toggle" value="dark" title="Use dark theme"
+										aria-label="Use dark theme" /></label></div>
+						</astro-root>
+					</div>
+				</div>
+			</nav>
+
+
+
+		</aside>
+	</main>
+</body>
+
+</html>

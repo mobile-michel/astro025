@@ -1,0 +1,19 @@
+---
+import PageLayout from '../../layouts/mainLayout.astro'
+import Aside from '../../components/mainComponents/aside.astro'
+let data = await Astro.glob('../../pages/plan/*.md')
+const { content } = Astro.props
+---
+<PageLayout content={content}>
+		<aside id="grid-left">
+			<nav aria-labelledby="grid-left"></nav>
+		</aside>
+		<div id="grid-main">
+			<article>
+				<slot />
+			</article>
+		</div>
+		<aside id="grid-right">
+			<nav aria-labelledby="grid-right"><span>Aside navigation in grid-right</span></nav>
+		</aside>
+</PageLayout>

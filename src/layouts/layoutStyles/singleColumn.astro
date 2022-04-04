@@ -1,7 +1,7 @@
 ---
-import PageLayout from '../layouts/astrodocLayout.astro'
-import Aside from '../components/mainComponents/aside.astro'
-let data = await Astro.glob('../pages/plan/*.md')
+import PageLayout from '../../layouts/astrodocLayout.astro'
+import Aside from '../../components/mainComponents/aside.astro'
+import {NAV_STYLE} from '../config.ts'
 const { content } = Astro.props
 ---
 <PageLayout content={content}>
@@ -16,13 +16,13 @@ const { content } = Astro.props
 
 <style is:global>
 	body {
-		@apply bg-slate-100 min-h-screen flex flex-col
+		@apply min-h-screen flex flex-col
 	}
 	header, footer {
-		@apply bg-cyan-50 p-4
+		@apply p-4
 	}
 	main {
-		@apply bg-white grow mx-auto flex flex-col md:flex-row p-4 lg:w-5/6
+		@apply grow mx-auto flex flex-col md:flex-row p-4 lg:w-5/6
 	}
 	aside {
 		@apply p-4 border
