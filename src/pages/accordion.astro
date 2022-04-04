@@ -1,5 +1,5 @@
 ---
-import Layout from '../components/blogComponent.astro'
+import Layout from '../layouts/layoutStyles/singleColumn.astro'
 import Accordion1 from '../components/accordions/accordion1.astro'
 import Flush from '../components/accordions/flush.astro'
 import Open from '../components/accordions/open.astro'
@@ -13,9 +13,3 @@ const { content } = Astro.props
     <Flush />
     <Open />
 </Layout>
-
-<style global>
-    h2 {
-        @apply text-xl
-    }
-</style>

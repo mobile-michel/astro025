@@ -1,6 +1,11 @@
+---
+import SideNav1 from '../components/nav/styleSidebar.astro'
+import SideNav2 from '../components/nav/templateSidebar.astro'
+---
+
 	<main>
 		<aside id="grid-left">
-			<nav aria-labelledby="grid-left">Aside navigation in grid-left</nav>
+			<SideNav1 />
 		</aside>
 		<div id="grid-main">
 			<article>
@@ -8,6 +13,6 @@
 			</article>
 		</div>
 		<aside id="grid-right">
-			<nav aria-labelledby="grid-right"><span>Aside navigation in grid-right</span></nav>
+			<SideNav2 />
 		</aside>
 	</main>

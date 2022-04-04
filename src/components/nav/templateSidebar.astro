@@ -1,0 +1,14 @@
+---
+import {NAV_TEMPLATE} from '../../config.ts'
+---
+
+		<nav>
+			<div>
+			<ul>
+			{
+				Object.keys(NAV_TEMPLATE).map(navItemKey => <li>
+				<a href={NAV_TEMPLATE[navItemKey].path}>{NAV_TEMPLATE[navItemKey].title}</a></li>)
+			}
+			</ul>
+			</div>
+		</nav>

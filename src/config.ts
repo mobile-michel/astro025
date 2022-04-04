@@ -4,14 +4,18 @@ export const SITE = {
     footer: '© 2022 Michel Maillard Copyright | info@maillard.li'
 }
 
-export const NAV_ITEMS = {
+export const NAV_MAIN = {
     overview: {
         path: '/',
         title: 'Home'
     },
-    templates: {
-        path: './rosstopping/index.html',
-        title: 'Raw templates'
+    accordion: {
+        path: '/accordion',
+        title: 'Accordions'
+    },
+    card: {
+        path: '/card',
+        title: 'Cards'
     }
 }
 
@@ -48,7 +52,7 @@ export const NAV_TEMPLATE = {
 
 export const NAV_STYLE = {
     single: {
-        path: '/single',
+        path: '/',
         title: 'Single column'
     },
     split: {

@@ -1,15 +1,15 @@
 ---
-import {NAV_ITEMS} from '../config.ts'
+import {NAV_MAIN} from '../../config.ts'
 ---
 		<nav class="shadow-lg bg-cover bg-center bg-top">
-			<div class="max-w-6xl mx-auto px-4 bg-white/70">
+			<div class="max-w-6xl mx-auto px-4">
 				<div class="flex justify-between">
 					<div class="flex space-x-7">
 						<!-- Primary Navbar items -->
 						<div class="hidden md:flex items-center space-x-1">
 							{
-								Object.keys(NAV_ITEMS).map(navItemKey => 
-								<a href={NAV_ITEMS[navItemKey].path} class="py-4 px-2 text-gray-500 font-semibold hover:text-white hover:bg-sky-300 transition duration-300">{NAV_ITEMS[navItemKey].title}</a>)
+								Object.keys(NAV_MAIN).map(navItemKey => 
+								<a href={NAV_MAIN[navItemKey].path} class="py-4 px-2 text-gray-500 font-semibold hover:text-white hover:bg-sky-300 transition duration-300">{NAV_MAIN[navItemKey].title}</a>)
 							}
 						</div>
 					</div>
@@ -27,8 +27,8 @@ import {NAV_ITEMS} from '../config.ts'
 			<div class="hidden mobile-menu">
 				<ul class="bg-white/70">
 							{
-								Object.keys(NAV_ITEMS).map(navItemKey => <li>
-								<a href={NAV_ITEMS[navItemKey].path} class="block text-sm font-bold px-2 py-4 hover:bg-sky-300 hover:text-white transition duration-300">{NAV_ITEMS[navItemKey].title}</a></li>)
+								Object.keys(NAV_MAIN).map(navItemKey => <li>
+								<a href={NAV_MAIN[navItemKey].path} class="block text-sm font-bold px-2 py-4 hover:bg-sky-300 hover:text-white transition duration-300">{NAV_MAIN[navItemKey].title}</a></li>)
 							}
 				</ul>
 			</div>

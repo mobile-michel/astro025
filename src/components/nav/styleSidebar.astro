@@ -1,0 +1,14 @@
+---
+import {NAV_STYLE} from '../../config.ts'
+---
+
+		<nav>
+			<div>
+			<ul>
+			{
+				Object.keys(NAV_STYLE).map(navItemKey => <li>
+				<a href={NAV_STYLE[navItemKey].path}>{NAV_STYLE[navItemKey].title}</a></li>)
+			}
+			</ul>
+			</div>
+		</nav>

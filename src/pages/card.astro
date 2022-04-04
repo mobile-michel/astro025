@@ -1,5 +1,5 @@
 ---
-import RossToppingLayout from '../layouts/RossToppingLayout.astro'
+import Layout from '../layouts/layoutStyles/singleColumn.astro'
 import Card1 from '../components/cards/oneCard.astro'
 import Card2 from '../components/cards/threeCards.astro'
 import Card3 from '../components/cards/horizontalCard.astro'
@@ -8,9 +8,9 @@ const title = 'Cards'
 const description = 'Assimetrical layout text/photo with hamburger menu'
 ---
 
-<RossToppingLayout content={{title}}>
+<Layout content={{title}}>
     <Card1 />
     <Card2 />
     <Card3 />
     <Card4 />
-</RossToppingLayout>
+</Layout>
