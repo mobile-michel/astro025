@@ -1,5 +1,7 @@
 # Astro 0.26 & Tailwind CSS 3.0.23
 
+Deploy on Netlify at https://app.netlify.com/sites/astro025
+
 This project is an attempt to create a collection of templates and components with the utility-first CSS framework Tailwind CSS. It is a work in progress.
 
 Templates are from [Ross Topping](https://github.com/rosstopping) and components are from [Tailwind Elements](https://tailwind-elements.com/).
